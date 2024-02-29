@@ -29,7 +29,6 @@ export class VispiScopeManager {
         let tree = this.scopeTree;
         if (blocktype === "MainBlock") {
             // Get full path to here
-            console.log("DEFINED MAIN");
             this.declaredMain = true;
         }
         id = HashId(id);
@@ -131,9 +130,7 @@ export class VispiScopeManager {
      */
     Clear() {
         this.lastScope = this.CopyState();
-        console.log(this.lastScope);
         this.ResetState();
-        console.log("SCOPE CLEARED");
     }
 
     /**

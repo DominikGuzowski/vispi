@@ -154,7 +154,6 @@ VispiGenerator.forBlock["GuardScopeBlock"] = function (block: Blockly.Block, gen
 VispiGenerator.forBlock["ChoiceScopeBlock"] = function (block: Blockly.Block, generator: VispiCodeGenerator) {
     if (!VispiScope.CanGenerate()) return "";
 
-    console.warn(VispiScope.CurrentScope());
     VispiScope.RegisterScope(`${block.id}:SCOPE_ONE`, "ChoiceScopeBlock:FIRST");
     const scope = generator.statementToCode(block, "SCOPE_ONE");
     VispiScope.PopScope();

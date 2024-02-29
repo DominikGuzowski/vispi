@@ -39,7 +39,6 @@ export const Load = (key: string, scope?: VispiScopeManager): object => {
     const data = JSON.parse(json);
     const scopeData = localStorage.getItem(key + ":scope");
     if (scopeData && scopeData !== "undefined") {
-        console.log(scopeData);
         scope?.Load(JSON.parse(scopeData));
     }
     return data;

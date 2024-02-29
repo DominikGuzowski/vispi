@@ -233,7 +233,6 @@ VispiBlocks["ProcessBlock"] = {
                     if (scope) {
                         const id = scope.GetRawProcessId(str);
                         if (id === undefined) return str;
-                        console.log(id, this.id);
                         if (id !== this.id) {
                             let i = 0;
                             while (scope.GetRawProcessId(str + i) !== undefined) {
@@ -337,15 +336,12 @@ VispiBlocks["MainBlock"] = {
     onchange: function (event: any) {
         if (this.workspace && event.type === Blockly.Events.BLOCK_CREATE && event.blockId === this.id) {
             const last = VispiScope.GetLastScope();
-            console.log(last);
             if (last) {
                 const declared = last.HasAlreadyDeclaredMain();
                 if (declared) {
-                    console.log("DISPOSING MAIN", last, declared, event);
                     this.dispose();
                 }
             }
-            console.log("-----");
         }
     },
 };

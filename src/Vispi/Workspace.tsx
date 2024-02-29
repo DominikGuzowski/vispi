@@ -61,6 +61,8 @@ export const VispiWorkspace = ({ storageKey, onChange, scopeRef, workspaceRef, o
         initialJson: Load(storageKey, VispiScope),
         onWorkspaceChange: (workspace) => {
             clearTimeout(timeoutRef.current);
+            clearTimeout(saveTimeout.current);
+
             if (onChange && workspace) {
                 timeoutRef.current = setTimeout(() => {
                     const state: VispiState = {
@@ -70,10 +72,9 @@ export const VispiWorkspace = ({ storageKey, onChange, scopeRef, workspaceRef, o
                     };
                     onChange(state);
                     VispiScope.Clear();
-                }, 0);
+                }, 250);
             }
 
-            clearTimeout(saveTimeout.current);
             saveTimeout.current = setTimeout(() => {
                 Save(workspace, storageKey, VispiScope);
             }, 500);
