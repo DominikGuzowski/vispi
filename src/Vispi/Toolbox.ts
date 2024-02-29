@@ -7,6 +7,10 @@ export const VispiToolbox = {
             contents: [
                 {
                     kind: "block",
+                    type: "MainBlock",
+                },
+                {
+                    kind: "block",
                     type: "RestrictScopeBlock",
                 },
                 {
@@ -62,11 +66,18 @@ export const VispiToolbox = {
                 },
                 {
                     kind: "block",
-                    type: "ChoiceScopeBlock",
+                    type: "ChoiceParentBlock",
+                    inputs: {
+                        CHOICE: {
+                            block: {
+                                type: "ChoiceScopeBlock",
+                            },
+                        },
+                    },
                 },
                 {
                     kind: "block",
-                    type: "MainBlock",
+                    type: "ChoiceScopeBlock",
                 },
             ],
         },

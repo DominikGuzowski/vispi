@@ -57,12 +57,9 @@ const GetAncestry = (block: {
     if (IsScopeBlock(block)) block = block.getParent();
     while (block) {
         if (IsScopeBlock(block)) {
-            if (block.type === "ChoiceScopeBlock") {
-                const connectedThrough =
-                    block.getInputTargetBlock("SCOPE_ONE") === previous ? "SCOPE_ONE" : "SCOPE_TWO";
-                ancestry.unshift(block.id + ":" + connectedThrough);
-            } else if (!(previous?.type === "ParallelScopeBlock" && block.type === "ParallelScopeBlock"))
-                ancestry.unshift(block.id); // Consecutve ParallelScopeBlocks are not added to ancestry.
+            const parallelCondition = previous?.type === "ParallelScopeBlock" && block.type === "ParallelScopeBlock";
+            const choiceCondition = previous?.type === "ChoiceScopeBlock" && block.type === "ChoiceScopeBlock";
+            if (!(parallelCondition || choiceCondition)) ancestry.unshift(block.id); // Consecutve (Parallel/Choice)ScopeBlocks are not added to ancestry.
         }
 
         previous = block;
@@ -115,36 +112,10 @@ VispiBlocks["GuardScopeBlock"] = {
     },
 };
 
-VispiBlocks["ParallelScopeBlock"] = {
-    init: function () {
-        this.appendDummyInput().appendField("sequence");
-        this.appendStatementInput("SCOPE");
-        this.setPreviousStatement(true, ["ParallelScopeBlock", "ParallelParentBlock"]);
-        this.setNextStatement(true, "ParallelScopeBlock");
-        this.setColour("#55A0F4");
-    },
-    // onchange: function (event) {
-    //     // Check if next statement is a ParallelScopeBlock, else detach it.
-    //     if (this.workspace && this.getNextBlock()?.type !== "ParallelScopeBlock") {
-    //         this.getNextBlock()?.unplug(true, true);
-    //     }
-    // },
-};
-
-VispiBlocks["ChoiceScopeBlock"] = {
-    init: function () {
-        this.appendStatementInput("SCOPE_ONE").appendField("either");
-        this.appendStatementInput("SCOPE_TWO").appendField("or");
-
-        this.setPreviousStatement(true, null);
-        this.setNextStatement(false, null);
-        this.setColour("#33ccaa");
-    },
-};
-
 VispiBlocks["ParallelParentBlock"] = {
     init: function () {
-        this.appendStatementInput("PARALLEL").appendField("parallel").setCheck("ParallelScopeBlock");
+        this.appendDummyInput().appendField("run in parallel");
+        this.appendStatementInput("PARALLEL").setCheck("ParallelScopeBlock");
         this.setPreviousStatement(true, null);
         this.setNextStatement(false, null);
         this.setColour("#55A0F4");
@@ -153,6 +124,58 @@ VispiBlocks["ParallelParentBlock"] = {
         if (this.workspace) {
             const children = GetDirectChildren(this, "PARALLEL");
             children.filter((c) => c.type !== "ParallelScopeBlock").forEach((c) => c.unplug(true));
+        }
+    },
+};
+
+VispiBlocks["ParallelScopeBlock"] = {
+    init: function () {
+        this.appendDummyInput().appendField("sequence");
+        this.appendStatementInput("SCOPE");
+        this.setPreviousStatement(true, ["ParallelScopeBlock", "ParallelParentBlock"]);
+        this.setNextStatement(true, "ParallelScopeBlock");
+        this.setColour("#55A0F4");
+    },
+    onchange: function (event: any) {
+        if (this.workspace) {
+            const surrParent = this.getSurroundParent();
+            if (surrParent?.type !== "ParallelParentBlock") {
+                this.unplug(true, true);
+            }
+        }
+    },
+};
+
+VispiBlocks["ChoiceParentBlock"] = {
+    init: function () {
+        this.appendDummyInput().appendField("choose from");
+        this.appendStatementInput("CHOICE").setCheck("ChoiceScopeBlock");
+        this.setPreviousStatement(true, null);
+        this.setNextStatement(false, null);
+        this.setColour("#33ccaa");
+    },
+    onchange: function (event: any) {
+        if (this.workspace) {
+            const children = GetDirectChildren(this, "CHOICE");
+            children.filter((c) => c.type !== "ChoiceScopeBlock").forEach((c) => c.unplug(true));
+        }
+    },
+};
+VispiBlocks["ChoiceScopeBlock"] = {
+    init: function () {
+        this.appendDummyInput().appendField("choice");
+        this.appendStatementInput("SCOPE");
+
+        this.setPreviousStatement(true, null);
+        this.setNextStatement(true, null);
+        this.setColour("#33ccaa");
+    },
+    onchange: function (event: any) {
+        if (this.workspace) {
+            const surrParent = this.getSurroundParent();
+            if (surrParent?.type !== "ChoiceParentBlock") {
+                this.unplug(true, true);
+            }
         }
     },
 };

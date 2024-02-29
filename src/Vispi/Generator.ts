@@ -39,17 +39,24 @@ const ParallelScopes = (a: Blockly.Block | null, b: Blockly.Block | null) => {
     return a?.type === "ParallelScopeBlock" && b?.type === "ParallelScopeBlock";
 };
 
+const ChoiceScopes = (a: Blockly.Block | null, b: Blockly.Block | null) => {
+    return a?.type === "ChoiceScopeBlock" && b?.type === "ChoiceScopeBlock";
+};
 class VispiCodeGenerator extends Blockly.Generator {
     protected scrub_(block: Blockly.Block, code: string, opt_thisOnly: boolean) {
         if (!IsMainOrProcessOrGlobalName(block) && !VispiScope.CanGenerate()) return "";
         const nextBlock = block.nextConnection?.targetBlock() || null;
 
-        if (ShouldSeparate(block) && nextBlock) {
-            return code + ". " + this.blockToCode(nextBlock);
+        if (ChoiceScopes(block, nextBlock)) {
+            return code + " + " + this.blockToCode(nextBlock);
         }
 
         if (ParallelScopes(block, nextBlock)) {
             return code + " | " + this.blockToCode(nextBlock);
+        }
+
+        if (ShouldSeparate(block) && nextBlock) {
+            return code + ". " + this.blockToCode(nextBlock);
         }
 
         return code + this.blockToCode(nextBlock);
@@ -154,15 +161,11 @@ VispiGenerator.forBlock["GuardScopeBlock"] = function (block: Blockly.Block, gen
 VispiGenerator.forBlock["ChoiceScopeBlock"] = function (block: Blockly.Block, generator: VispiCodeGenerator) {
     if (!VispiScope.CanGenerate()) return "";
 
-    VispiScope.RegisterScope(`${block.id}:SCOPE_ONE`, "ChoiceScopeBlock:FIRST");
-    const scope = generator.statementToCode(block, "SCOPE_ONE");
+    VispiScope.RegisterScope(block.id, "ChoiceScopeBlock");
+    const scope = generator.statementToCode(block, "SCOPE");
     VispiScope.PopScope();
 
-    VispiScope.RegisterScope(`${block.id}:SCOPE_TWO`, "ChoiceScopeBlock:SECOND");
-    const scope2 = generator.statementToCode(block, "SCOPE_TWO");
-    VispiScope.PopScope();
-
-    return `(${scope} + ${scope2})`;
+    return scope;
 };
 
 VispiGenerator.forBlock["ParallelScopeBlock"] = function (block: Blockly.Block, generator: VispiCodeGenerator) {
@@ -173,6 +176,16 @@ VispiGenerator.forBlock["ParallelScopeBlock"] = function (block: Blockly.Block, 
     VispiScope.PopScope();
 
     return scope;
+};
+
+VispiGenerator.forBlock["ChoiceParentBlock"] = function (block: Blockly.Block, generator: VispiCodeGenerator) {
+    if (!VispiScope.CanGenerate()) return "";
+
+    VispiScope.RegisterScope(block.id, "ChoiceParentBlock");
+    const scopes = generator.statementToCode(block, "CHOICE");
+    VispiScope.PopScope();
+
+    return `(${scopes})`;
 };
 
 VispiGenerator.forBlock["ParallelParentBlock"] = function (block: Blockly.Block, generator: VispiCodeGenerator) {
