@@ -43,7 +43,7 @@ const ChoiceScopes = (a: Blockly.Block | null, b: Blockly.Block | null) => {
     return a?.type === "ChoiceScopeBlock" && b?.type === "ChoiceScopeBlock";
 };
 class VispiCodeGenerator extends Blockly.Generator {
-    protected scrub_(block: Blockly.Block, code: string, opt_thisOnly: boolean) {
+    protected scrub_(block: Blockly.Block, code: string) {
         if (!IsMainOrProcessOrGlobalName(block) && !ScopeManager.CanGenerate()) return "";
         const nextBlock = block.nextConnection?.targetBlock() || null;
 
@@ -74,7 +74,7 @@ class VispiCodeGenerator extends Blockly.Generator {
 export const VispiGenerator = new VispiCodeGenerator("VisPi");
 VispiGenerator.INDENT = "";
 
-VispiGenerator.forBlock["GlobalNameBlock"] = function (block: Blockly.Block, generator: VispiCodeGenerator) {
+VispiGenerator.forBlock["GlobalNameBlock"] = function (block: Blockly.Block) {
     const name = block.getFieldValue("NEW") ?? "";
 
     if (name.length > 0) {
@@ -84,7 +84,7 @@ VispiGenerator.forBlock["GlobalNameBlock"] = function (block: Blockly.Block, gen
     return "";
 };
 
-VispiGenerator.forBlock["NameAccessBlock"] = function (block: Blockly.Block, generator: VispiCodeGenerator) {
+VispiGenerator.forBlock["NameAccessBlock"] = function (block: Blockly.Block) {
     if (!ScopeManager.CanGenerate()) return ["", 0];
 
     const name = block.getFieldValue("NAME");
@@ -94,7 +94,7 @@ VispiGenerator.forBlock["NameAccessBlock"] = function (block: Blockly.Block, gen
     return [name, 0];
 };
 
-VispiGenerator.forBlock["TerminationBlock"] = function (block: Blockly.Block, generator: VispiCodeGenerator) {
+VispiGenerator.forBlock["TerminationBlock"] = function () {
     if (!ScopeManager.CanGenerate()) return "";
 
     return "0";
@@ -127,7 +127,7 @@ VispiGenerator.forBlock["MultiSendBlock"] = function (block: Blockly.Block, gene
     return ``;
 };
 
-VispiGenerator.forBlock["SendNameBlock"] = function (block: Blockly.Block, generator: VispiCodeGenerator) {
+VispiGenerator.forBlock["SendNameBlock"] = function () {
     // Handled in MultiSendBlock
     return "";
 };
@@ -183,7 +183,7 @@ VispiGenerator.forBlock["MultiReceiveScopeBlock"] = function (block: Blockly.Blo
     return `${names.map((n) => `${on}(${n})`).join(". ")}`;
 };
 
-VispiGenerator.forBlock["ReceiveNameBlock"] = function (block: Blockly.Block, generator: VispiCodeGenerator) {
+VispiGenerator.forBlock["ReceiveNameBlock"] = function (block: Blockly.Block) {
     if (!ScopeManager.CanGenerate()) return "";
     const name = block.getFieldValue("NEW");
 
@@ -236,7 +236,7 @@ VispiGenerator.forBlock["MultiRestrictScopeBlock"] = function (block: Blockly.Bl
     return `${namesString}`;
 };
 
-VispiGenerator.forBlock["RestrictNameBlock"] = function (block: Blockly.Block, generator: VispiCodeGenerator) {
+VispiGenerator.forBlock["RestrictNameBlock"] = function (block: Blockly.Block) {
     if (!ScopeManager.CanGenerate()) return "";
     const name = block.getFieldValue("NEW");
 
@@ -320,18 +320,6 @@ VispiGenerator.forBlock["ParallelParentBlock"] = function (block: Blockly.Block,
     else return "";
 };
 
-// VispiGenerator.forBlock["ProcessDefinitionBlock"] = function (block: Blockly.Block, generator: VispiCodeGenerator) {
-//     const name = block.getFieldValue("NAME");
-//     const scope = generator.statementToCode(block, "STACK");
-//     return `${name} = ${scope}`;
-// };
-
-// VispiGenerator.forBlock["ProcessInvocationBlock"] = function (block: Blockly.Block, generator: VispiCodeGenerator) {
-//     const name = block.getFieldValue("NAME");
-
-//     return `${name}()`;
-// };
-
 VispiGenerator.forBlock["ProcessBlock"] = function (block: Blockly.Block, generator: VispiCodeGenerator) {
     ScopeManager.SetGeneration(true);
 
@@ -379,11 +367,11 @@ VispiGenerator.forBlock["ProcessCallBlock"] = function (block: Blockly.Block, ge
     return `${process}${argString}`;
 };
 
-VispiGenerator.forBlock["ProcessParamBlock"] = function (block: Blockly.Block, generator: VispiCodeGenerator) {
+VispiGenerator.forBlock["ProcessParamBlock"] = function () {
     return ``;
 };
 
-VispiGenerator.forBlock["ProcessArgBlock"] = function (block: Blockly.Block, generator: VispiCodeGenerator) {
+VispiGenerator.forBlock["ProcessArgBlock"] = function () {
     return ``;
 };
 
@@ -395,11 +383,3 @@ VispiGenerator.forBlock["MainBlock"] = function (block: Blockly.Block, generator
     ScopeManager.SetGeneration(false);
     return scope;
 };
-
-// VispiGenerator.forBlock["TestBlock"] = function (block: Blockly.Block, generator: VispiCodeGenerator) {
-//     return "";
-// };
-
-// VispiGenerator.forBlock["TestBlock2"] = function (block: Blockly.Block, generator: VispiCodeGenerator) {
-//     return "";
-// };

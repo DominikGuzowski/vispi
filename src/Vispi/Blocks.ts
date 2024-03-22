@@ -133,7 +133,7 @@ VispiBlocks["RestrictNameBlock"] = {
         this.setNextStatement(true, null);
     },
 
-    onchange: function (event: any) {
+    onchange: function () {
         if (this.workspace) {
             MustBeInExactScope(this, "MultiRestrictScopeBlock", "NAMES");
         }
@@ -179,7 +179,7 @@ VispiBlocks["ReceiveNameBlock"] = {
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
     },
-    onchange: function (event: any) {
+    onchange: function () {
         if (this.workspace) {
             MustBeInExactScope(this, "MultiReceiveScopeBlock", "NAMES");
         }
@@ -211,7 +211,7 @@ VispiBlocks["ParallelParentBlock"] = {
         this.setNextStatement(false, null);
         this.setColour("#55A0F4");
     },
-    onchange: function (event: any) {
+    onchange: function () {
         if (this.workspace) {
             CanOnlyContain(this, "PARALLEL", ["ParallelScopeBlock"]);
         }
@@ -226,7 +226,7 @@ VispiBlocks["ParallelScopeBlock"] = {
         this.setNextStatement(true, "ParallelScopeBlock");
         this.setColour("#55A0F4");
     },
-    onchange: function (event: any) {
+    onchange: function () {
         if (this.workspace) {
             MustBeInExactScope(this, "ParallelParentBlock", "PARALLEL");
         }
@@ -241,7 +241,7 @@ VispiBlocks["ChoiceParentBlock"] = {
         this.setNextStatement(false, null);
         this.setColour("#33ccaa");
     },
-    onchange: function (event: any) {
+    onchange: function () {
         if (this.workspace) {
             CanOnlyContain(this, "CHOICE", ["ChoiceScopeBlock"]);
         }
@@ -256,7 +256,7 @@ VispiBlocks["ChoiceScopeBlock"] = {
         this.setNextStatement(true, null);
         this.setColour("#33ccaa");
     },
-    onchange: function (event: any) {
+    onchange: function () {
         if (this.workspace) {
             MustBeInExactScope(this, "ChoiceParentBlock", "CHOICE");
         }
@@ -284,7 +284,7 @@ VispiBlocks["MultiSendBlock"] = {
         this.setNextStatement(true, null);
         this.setColour("#3366FF");
     },
-    onchange: function (event: any) {
+    onchange: function () {
         if (this.workspace) {
             CanOnlyContain(this, "MESSAGES", ["SendNameBlock"]);
         }
@@ -298,7 +298,7 @@ VispiBlocks["SendNameBlock"] = {
         this.setNextStatement(true, null);
         this.setColour("#3366FF");
     },
-    onchange: function (event: any) {
+    onchange: function () {
         if (this.workspace) {
             MustBeInExactScope(this, "MultiSendBlock", "MESSAGES");
         }
@@ -324,7 +324,7 @@ VispiBlocks["GlobalNameBlock"] = {
         this.setPreviousStatement(true, null);
     },
 
-    onchange: function (event: any) {
+    onchange: function () {
         // If surrounding parents are not 'GlobalNameBlock' then disconnect them.
         if (this.workspace && this.getParent() && this.getParent().type !== "GlobalNameBlock") {
             this.unplug(true, true);
@@ -342,7 +342,7 @@ VispiBlocks["NameAccessBlock"] = {
         this.setOutput(true, null);
     },
 
-    onchange: function (event: any) {
+    onchange: function () {
         if (this.workspace && this.getField("NAME")) {
             let names = ScopeManager.GetLastScope()?.GetNames(GetAncestry(this.getParent())) ?? [];
 
@@ -400,7 +400,7 @@ VispiBlocks["ProcessBlock"] = {
         this.setNextStatement(false, null);
     },
 
-    onchange: function (event: any) {
+    onchange: function () {
         if (this.workspace) {
             CanOnlyContain(this, "PARAMS", ["ProcessParamBlock"]);
         }
@@ -418,7 +418,7 @@ VispiBlocks["ProcessCallBlock"] = {
         this.setNextStatement(false, null);
     },
 
-    onchange: function (event: any) {
+    onchange: function () {
         if (this.workspace) {
             CanOnlyContain(this, "ARGS", ["ProcessArgBlock"]);
 
@@ -453,7 +453,7 @@ VispiBlocks["ProcessParamBlock"] = {
         this.setNextStatement(true, null);
     },
 
-    onchange: function (event: any) {
+    onchange: function () {
         if (this.workspace) {
             MustBeInExactScope(this, "ProcessBlock", "PARAMS");
         }
@@ -469,7 +469,7 @@ VispiBlocks["ProcessArgBlock"] = {
         this.setNextStatement(true, null);
     },
 
-    onchange: function (event: any) {
+    onchange: function () {
         if (this.workspace) {
             const parentName = this.getSurroundParent()?.getFieldValue("PROCESS_NAME");
             if (parentName) {
@@ -509,33 +509,3 @@ VispiBlocks["MainBlock"] = {
         }
     },
 };
-
-// VispiBlocks["TestBlock"] = {
-//     init: function () {
-//         this.appendDummyInput().appendField("receive").appendField(new Blockly.FieldTextInput("?"), "TEST");
-//         this.appendValueInput("ON").appendField("on");
-//         this.setColour("#208932");
-//         this.setPreviousStatement(true, null);
-//         this.setNextStatement(true, null);
-//     },
-// };
-
-// VispiBlocks["TestBlock"] = {
-//     init: function () {
-//         this.appendDummyInput().appendField("restrict").appendField(new Blockly.FieldTextInput("?"), "TEST");
-//         this.setColour("#FF6600");
-//         this.setPreviousStatement(true, null);
-//         this.setNextStatement(true, null);
-//     },
-// };
-
-// VispiBlocks["TestBlock2"] = {
-//     init: function () {
-//         this.appendDummyInput().appendField("(");
-//         this.appendStatementInput("SCOPE");
-//         this.appendDummyInput().appendField(")");
-//         this.setColour("#666666");
-//         this.setPreviousStatement(true, null);
-//         this.setNextStatement(true, null);
-//     },
-// };
