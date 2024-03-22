@@ -223,7 +223,10 @@ export const VispiNav = ({
                                 ))}
                             </div>
                         </div>
-                        <a className='vispi-nav__item' href='https://github.com/DominikGuzowski/vispi' target='_blank'>
+                        <a
+                            className='vispi-nav__item'
+                            href='https://github.com/DominikGuzowski/vispi/tree/main/guide'
+                            target='_blank'>
                             How-to Guide
                         </a>
                         <a className='vispi-nav__item' href='https://github.com/DominikGuzowski/vispi' target='_blank'>
