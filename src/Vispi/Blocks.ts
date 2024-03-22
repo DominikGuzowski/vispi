@@ -1,5 +1,5 @@
 import * as Blockly from "blockly";
-import { VispiScope, VISPI_INVALID_NAME } from "./ScopeManager";
+import { ScopeManager, VISPI_INVALID_NAME } from "./ScopeManager";
 import { VispiToolbox } from "./Toolbox";
 import { NameAccessStates, ProcessNames } from "./Serialization";
 
@@ -25,11 +25,30 @@ const ScopeBlocks = (() => {
     const content = VispiToolbox.contents;
     for (const category of content) {
         if (category.kind === "category" && category.name === "Scopes") {
-            return ["ProcessBlock", ...category.contents.map((block: { type: any }) => block.type)];
+            return [
+                "ProcessBlock",
+                ...category.contents
+                    .map((block: { type: any }) => block.type)
+                    .filter((t) => t !== "RestrictNameBlock" && t !== "ReceiveNameBlock"),
+            ];
         }
     }
     return [];
 })();
+
+const MustBeInExactScope = (block: any, parent: string, scope: string) => {
+    const surroundingParent = block.getSurroundParent();
+    if (!surroundingParent) return;
+
+    if (surroundingParent.type !== parent || GetDirectChildren(surroundingParent, scope).indexOf(block) === -1) {
+        block.unplug(true, true);
+    }
+};
+
+const CanOnlyContain = (block: any, scope: string, types: string[]) => {
+    const children = GetDirectChildren(block, scope);
+    children.filter((c) => !types.includes(c.type)).forEach((c) => c.unplug(true, true));
+};
 
 const IsScopeBlock = (block: { type: any }) => {
     return ScopeBlocks.includes(block?.type);
@@ -43,6 +62,10 @@ const GetDirectChildren = (block: { getInputTargetBlock: (arg0: any) => any }, n
         currentBlock = currentBlock.getNextBlock();
     }
     return children;
+};
+
+const HasChildren = (block: any, name: string) => {
+    return GetDirectChildren(block, name).length > 0;
 };
 
 const GetAncestry = (block: {
@@ -82,6 +105,41 @@ VispiBlocks["RestrictScopeBlock"] = {
     },
 };
 
+VispiBlocks["MultiRestrictScopeBlock"] = {
+    init: function () {
+        this.appendDummyInput().appendField("restrict all").setAlign(Blockly.inputs.Align.RIGHT);
+        this.appendStatementInput("NAMES");
+        this.appendDummyInput().appendField("to").setAlign(Blockly.inputs.Align.RIGHT);
+
+        this.appendStatementInput("SCOPE");
+        this.setColour("#FF6600");
+        this.setPreviousStatement(true, null);
+        this.setNextStatement(false, null);
+    },
+    onchange: function () {
+        if (this.workspace) {
+            CanOnlyContain(this, "NAMES", ["RestrictNameBlock"]);
+        }
+    },
+};
+
+VispiBlocks["RestrictNameBlock"] = {
+    init: function () {
+        this.appendDummyInput()
+            .appendField("name")
+            .appendField(new Blockly.FieldTextInput("?", ToLowerleadingAlphaNumeric), "NEW");
+        this.setColour("#FF6600");
+        this.setPreviousStatement(true, null);
+        this.setNextStatement(true, null);
+    },
+
+    onchange: function (event: any) {
+        if (this.workspace) {
+            MustBeInExactScope(this, "MultiRestrictScopeBlock", "NAMES");
+        }
+    },
+};
+
 VispiBlocks["ReceiveScopeBlock"] = {
     init: function () {
         this.appendDummyInput()
@@ -92,6 +150,39 @@ VispiBlocks["ReceiveScopeBlock"] = {
         this.setColour("#208932");
         this.setPreviousStatement(true, null);
         this.setNextStatement(false, null);
+    },
+};
+
+VispiBlocks["MultiReceiveScopeBlock"] = {
+    init: function () {
+        this.appendDummyInput().appendField("receive all").setAlign(Blockly.inputs.Align.RIGHT);
+        this.appendStatementInput("NAMES");
+        this.appendValueInput("ON").appendField("on").setAlign(Blockly.inputs.Align.RIGHT);
+        this.appendStatementInput("SCOPE");
+        this.setColour("#208932");
+        this.setPreviousStatement(true, null);
+        this.setNextStatement(false, null);
+    },
+    onchange: function () {
+        if (this.workspace) {
+            CanOnlyContain(this, "NAMES", ["ReceiveNameBlock"]);
+        }
+    },
+};
+
+VispiBlocks["ReceiveNameBlock"] = {
+    init: function () {
+        this.appendDummyInput()
+            .appendField("name")
+            .appendField(new Blockly.FieldTextInput("", ToLowerleadingAlphaNumeric), "NEW");
+        this.setColour("#208932");
+        this.setPreviousStatement(true, null);
+        this.setNextStatement(true, null);
+    },
+    onchange: function (event: any) {
+        if (this.workspace) {
+            MustBeInExactScope(this, "MultiReceiveScopeBlock", "NAMES");
+        }
     },
 };
 
@@ -122,15 +213,14 @@ VispiBlocks["ParallelParentBlock"] = {
     },
     onchange: function (event: any) {
         if (this.workspace) {
-            const children = GetDirectChildren(this, "PARALLEL");
-            children.filter((c) => c.type !== "ParallelScopeBlock").forEach((c) => c.unplug(true));
+            CanOnlyContain(this, "PARALLEL", ["ParallelScopeBlock"]);
         }
     },
 };
 
 VispiBlocks["ParallelScopeBlock"] = {
     init: function () {
-        this.appendDummyInput().appendField("sequence");
+        this.appendDummyInput().appendField("task");
         this.appendStatementInput("SCOPE");
         this.setPreviousStatement(true, ["ParallelScopeBlock", "ParallelParentBlock"]);
         this.setNextStatement(true, "ParallelScopeBlock");
@@ -138,10 +228,7 @@ VispiBlocks["ParallelScopeBlock"] = {
     },
     onchange: function (event: any) {
         if (this.workspace) {
-            const surrParent = this.getSurroundParent();
-            if (surrParent?.type !== "ParallelParentBlock") {
-                this.unplug(true, true);
-            }
+            MustBeInExactScope(this, "ParallelParentBlock", "PARALLEL");
         }
     },
 };
@@ -156,8 +243,7 @@ VispiBlocks["ChoiceParentBlock"] = {
     },
     onchange: function (event: any) {
         if (this.workspace) {
-            const children = GetDirectChildren(this, "CHOICE");
-            children.filter((c) => c.type !== "ChoiceScopeBlock").forEach((c) => c.unplug(true));
+            CanOnlyContain(this, "CHOICE", ["ChoiceScopeBlock"]);
         }
     },
 };
@@ -172,10 +258,7 @@ VispiBlocks["ChoiceScopeBlock"] = {
     },
     onchange: function (event: any) {
         if (this.workspace) {
-            const surrParent = this.getSurroundParent();
-            if (surrParent?.type !== "ChoiceParentBlock") {
-                this.unplug(true, true);
-            }
+            MustBeInExactScope(this, "ChoiceParentBlock", "CHOICE");
         }
     },
 };
@@ -186,6 +269,45 @@ VispiBlocks["SendBlock"] = {
     init: function () {
         this.appendValueInput("MESSAGE").appendField("send");
         this.appendValueInput("ON").appendField("on");
+        this.setPreviousStatement(true, null);
+        this.setNextStatement(true, null);
+        this.setColour("#3366FF");
+    },
+};
+
+VispiBlocks["MultiSendBlock"] = {
+    init: function () {
+        this.appendDummyInput().appendField("send all").setAlign(Blockly.inputs.Align.RIGHT);
+        this.appendStatementInput("MESSAGES");
+        this.appendValueInput("ON").appendField("on").setAlign(Blockly.inputs.Align.RIGHT);
+        this.setPreviousStatement(true, null);
+        this.setNextStatement(true, null);
+        this.setColour("#3366FF");
+    },
+    onchange: function (event: any) {
+        if (this.workspace) {
+            CanOnlyContain(this, "MESSAGES", ["SendNameBlock"]);
+        }
+    },
+};
+
+VispiBlocks["SendNameBlock"] = {
+    init: function () {
+        this.appendValueInput("MESSAGE").appendField("name");
+        this.setPreviousStatement(true, null);
+        this.setNextStatement(true, null);
+        this.setColour("#3366FF");
+    },
+    onchange: function (event: any) {
+        if (this.workspace) {
+            MustBeInExactScope(this, "MultiSendBlock", "MESSAGES");
+        }
+    },
+};
+
+VispiBlocks["SyncBlock"] = {
+    init: function () {
+        this.appendValueInput("ON").appendField("sync");
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
         this.setColour("#3366FF");
@@ -222,7 +344,7 @@ VispiBlocks["NameAccessBlock"] = {
 
     onchange: function (event: any) {
         if (this.workspace && this.getField("NAME")) {
-            let names = VispiScope.GetLastScope()?.GetNames(GetAncestry(this.getParent())) ?? [];
+            let names = ScopeManager.GetLastScope()?.GetNames(GetAncestry(this.getParent())) ?? [];
 
             this.getField("NAME").menuGenerator_ = [["?", VISPI_INVALID_NAME], ...names.map((n) => [n, n])];
 
@@ -252,7 +374,7 @@ VispiBlocks["ProcessBlock"] = {
             .appendField(
                 new Blockly.FieldTextInput("UnnamedProcess", (str) => {
                     str = ToUpperleadingAlphaNumeric(str);
-                    let scope = VispiScope.GetLastScope();
+                    let scope = ScopeManager.GetLastScope();
                     if (scope) {
                         const id = scope.GetRawProcessId(str);
                         if (id === undefined) return str;
@@ -280,8 +402,7 @@ VispiBlocks["ProcessBlock"] = {
 
     onchange: function (event: any) {
         if (this.workspace) {
-            const parameters = GetDirectChildren(this, "PARAMS");
-            parameters.filter((p) => p.type !== "ProcessParamBlock").forEach((p) => p.unplug(true));
+            CanOnlyContain(this, "PARAMS", ["ProcessParamBlock"]);
         }
     },
 };
@@ -299,13 +420,25 @@ VispiBlocks["ProcessCallBlock"] = {
 
     onchange: function (event: any) {
         if (this.workspace) {
-            const parameters = GetDirectChildren(this, "ARGS");
-            parameters.filter((p) => p.type !== "ProcessArgBlock").forEach((p) => p.unplug(true));
+            CanOnlyContain(this, "ARGS", ["ProcessArgBlock"]);
 
-            let names = VispiScope.GetLastScope()?.GetProcessNames();
+            let names = ScopeManager.GetLastScope()?.GetProcessNames();
             const menu: Blockly.MenuGenerator = names?.map((n) => [n, n]) ?? [["?", VISPI_INVALID_NAME]];
 
             this.getField("PROCESS_NAME").menuGenerator_ = menu;
+
+            const paramCount = ScopeManager.GetLastScope()?.GetParams(this.getFieldValue("PROCESS_NAME")).length ?? 0;
+            const argCount = GetDirectChildren(this, "ARGS").length;
+
+            console.log(paramCount, argCount);
+
+            if (paramCount !== argCount) {
+                this.setWarningText(
+                    `Expected ${paramCount} argument${paramCount === 1 ? "" : "s"}, but got ${argCount}.`
+                );
+            } else {
+                this.setWarningText(null);
+            }
         }
     },
 };
@@ -318,6 +451,12 @@ VispiBlocks["ProcessParamBlock"] = {
         this.setColour("#7722DD");
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
+    },
+
+    onchange: function (event: any) {
+        if (this.workspace) {
+            MustBeInExactScope(this, "ProcessBlock", "PARAMS");
+        }
     },
 };
 
@@ -334,15 +473,18 @@ VispiBlocks["ProcessArgBlock"] = {
         if (this.workspace) {
             const parentName = this.getSurroundParent()?.getFieldValue("PROCESS_NAME");
             if (parentName) {
-                let scopeNames = VispiScope.GetLastScope()?.GetParams(parentName) ?? [];
-                if (scopeNames.length === 0) scopeNames = VispiScope.GetParams(parentName); // When loading for the first time from JSON
+                let scopeNames = ScopeManager.GetLastScope()?.GetParams(parentName) ?? [];
+                if (scopeNames.length === 0) scopeNames = ScopeManager.GetParams(parentName); // When loading for the first time from JSON
                 const thisIndex = GetDirectChildren(this.getSurroundParent(), "ARGS").indexOf(this);
                 if (thisIndex < scopeNames.length && thisIndex !== -1) {
                     this.setFieldValue(scopeNames[thisIndex] + " =", "LABEL");
+                    this.setColour("#7722DD");
                 } else if (thisIndex >= scopeNames.length) {
-                    this.unplug(true, true);
+                    this.setFieldValue(`ERROR: Too Many Args ${thisIndex + 1}/${scopeNames.length}`, "LABEL");
+                    this.setColour("#f00");
                 }
             }
+            MustBeInExactScope(this, "ProcessCallBlock", "ARGS");
         }
     },
 };
@@ -358,13 +500,42 @@ VispiBlocks["MainBlock"] = {
 
     onchange: function (event: any) {
         if (this.workspace && event.type === Blockly.Events.BLOCK_CREATE && event.blockId === this.id) {
-            const last = VispiScope.GetLastScope();
+            const last = ScopeManager.GetLastScope();
             if (last) {
-                const declared = last.HasAlreadyDeclaredMain();
-                if (declared) {
+                if (last.HasAlreadyDeclaredMain() && !HasChildren(this, "MAIN")) {
                     this.dispose();
                 }
             }
         }
     },
 };
+
+// VispiBlocks["TestBlock"] = {
+//     init: function () {
+//         this.appendDummyInput().appendField("receive").appendField(new Blockly.FieldTextInput("?"), "TEST");
+//         this.appendValueInput("ON").appendField("on");
+//         this.setColour("#208932");
+//         this.setPreviousStatement(true, null);
+//         this.setNextStatement(true, null);
+//     },
+// };
+
+// VispiBlocks["TestBlock"] = {
+//     init: function () {
+//         this.appendDummyInput().appendField("restrict").appendField(new Blockly.FieldTextInput("?"), "TEST");
+//         this.setColour("#FF6600");
+//         this.setPreviousStatement(true, null);
+//         this.setNextStatement(true, null);
+//     },
+// };
+
+// VispiBlocks["TestBlock2"] = {
+//     init: function () {
+//         this.appendDummyInput().appendField("(");
+//         this.appendStatementInput("SCOPE");
+//         this.appendDummyInput().appendField(")");
+//         this.setColour("#666666");
+//         this.setPreviousStatement(true, null);
+//         this.setNextStatement(true, null);
+//     },
+// };

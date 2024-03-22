@@ -1,0 +1,2005 @@
+{
+    "workspace": {
+        "blocks": {
+            "languageVersion": 0,
+            "blocks": [
+                {
+                    "type": "ProcessBlock",
+                    "id": "?zu6bi9Q?sKLfg_Gynxf",
+                    "x": 530,
+                    "y": 610,
+                    "fields": {
+                        "PROCESS": "Transmitter"
+                    },
+                    "inputs": {
+                        "PARAMS": {
+                            "block": {
+                                "type": "ProcessParamBlock",
+                                "id": "d2FvXm29^HM}kYBcywxt",
+                                "fields": {
+                                    "NEW": "talk"
+                                },
+                                "next": {
+                                    "block": {
+                                        "type": "ProcessParamBlock",
+                                        "id": "(V;Nk#:2u8waF3aH,.*g",
+                                        "fields": {
+                                            "NEW": "switch"
+                                        },
+                                        "next": {
+                                            "block": {
+                                                "type": "ProcessParamBlock",
+                                                "id": "W!/O;0OtQv7VI^Dl%L@j",
+                                                "fields": {
+                                                    "NEW": "gain"
+                                                },
+                                                "next": {
+                                                    "block": {
+                                                        "type": "ProcessParamBlock",
+                                                        "id": "J*3V2wTtbwR5~J1KGKC9",
+                                                        "fields": {
+                                                            "NEW": "lose"
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "BODY": {
+                            "block": {
+                                "type": "ChoiceParentBlock",
+                                "id": "xW98d`ErF?dJ(D+Z`O0u",
+                                "inputs": {
+                                    "CHOICE": {
+                                        "block": {
+                                            "type": "ChoiceScopeBlock",
+                                            "id": "?z;,]y?Gk+/JR0QfToz!",
+                                            "inputs": {
+                                                "SCOPE": {
+                                                    "block": {
+                                                        "type": "SyncBlock",
+                                                        "id": "/gbEU}XL8[:0u;$)Q|CO",
+                                                        "inputs": {
+                                                            "ON": {
+                                                                "block": {
+                                                                    "type": "NameAccessBlock",
+                                                                    "id": "MvHGsjpYyoxmp[(I37@q",
+                                                                    "fields": {
+                                                                        "NAME": "talk"
+                                                                    }
+                                                                }
+                                                            }
+                                                        },
+                                                        "next": {
+                                                            "block": {
+                                                                "type": "ProcessCallBlock",
+                                                                "id": "@Z!#k?g^anU7hURS`j7F",
+                                                                "fields": {
+                                                                    "PROCESS_NAME": "Transmitter"
+                                                                },
+                                                                "inputs": {
+                                                                    "ARGS": {
+                                                                        "block": {
+                                                                            "type": "ProcessArgBlock",
+                                                                            "id": "jebJa8oMR#xsq~=C3Niq",
+                                                                            "inputs": {
+                                                                                "ARG": {
+                                                                                    "block": {
+                                                                                        "type": "NameAccessBlock",
+                                                                                        "id": "/gNTyXcqG$I%%#4t:0N0",
+                                                                                        "fields": {
+                                                                                            "NAME": "talk"
+                                                                                        }
+                                                                                    }
+                                                                                }
+                                                                            },
+                                                                            "next": {
+                                                                                "block": {
+                                                                                    "type": "ProcessArgBlock",
+                                                                                    "id": "ER)F{=?N~.EH]$1^Rhh9",
+                                                                                    "inputs": {
+                                                                                        "ARG": {
+                                                                                            "block": {
+                                                                                                "type": "NameAccessBlock",
+                                                                                                "id": "+~MRQT-pPyY2_Q/b,9Vp",
+                                                                                                "fields": {
+                                                                                                    "NAME": "switch"
+                                                                                                }
+                                                                                            }
+                                                                                        }
+                                                                                    },
+                                                                                    "next": {
+                                                                                        "block": {
+                                                                                            "type": "ProcessArgBlock",
+                                                                                            "id": "w=AH0Z(yem6z=^oHw+ps",
+                                                                                            "inputs": {
+                                                                                                "ARG": {
+                                                                                                    "block": {
+                                                                                                        "type": "NameAccessBlock",
+                                                                                                        "id": "Huj[a7^r66O6B;aLdO!`",
+                                                                                                        "fields": {
+                                                                                                            "NAME": "gain"
+                                                                                                        }
+                                                                                                    }
+                                                                                                }
+                                                                                            },
+                                                                                            "next": {
+                                                                                                "block": {
+                                                                                                    "type": "ProcessArgBlock",
+                                                                                                    "id": "jiJ$t[gTC3W7|jR1W7}U",
+                                                                                                    "inputs": {
+                                                                                                        "ARG": {
+                                                                                                            "block": {
+                                                                                                                "type": "NameAccessBlock",
+                                                                                                                "id": "M~8JP$]x28aE59-2;X6=",
+                                                                                                                "fields": {
+                                                                                                                    "NAME": "lose"
+                                                                                                                }
+                                                                                                            }
+                                                                                                        }
+                                                                                                    }
+                                                                                                }
+                                                                                            }
+                                                                                        }
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "next": {
+                                                "block": {
+                                                    "type": "ChoiceScopeBlock",
+                                                    "id": "3*9An.5qQLfOU^t2Kzg=",
+                                                    "inputs": {
+                                                        "SCOPE": {
+                                                            "block": {
+                                                                "type": "MultiReceiveScopeBlock",
+                                                                "id": ",IzE-Tgo!~(rug~`~4J{",
+                                                                "inputs": {
+                                                                    "NAMES": {
+                                                                        "block": {
+                                                                            "type": "ReceiveNameBlock",
+                                                                            "id": "yK*g(Qft[dqMNw19]%Bw",
+                                                                            "fields": {
+                                                                                "NEW": "t"
+                                                                            },
+                                                                            "next": {
+                                                                                "block": {
+                                                                                    "type": "ReceiveNameBlock",
+                                                                                    "id": "GWo8EF=jhv60%ILD#Yfv",
+                                                                                    "fields": {
+                                                                                        "NEW": "s"
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    },
+                                                                    "ON": {
+                                                                        "block": {
+                                                                            "type": "NameAccessBlock",
+                                                                            "id": "[olC`W,.ekgsBP02%lki",
+                                                                            "fields": {
+                                                                                "NAME": "lose"
+                                                                            }
+                                                                        }
+                                                                    },
+                                                                    "SCOPE": {
+                                                                        "block": {
+                                                                            "type": "MultiSendBlock",
+                                                                            "id": "Z#:VLr[}dJ:Z,7aXL/2]",
+                                                                            "inputs": {
+                                                                                "MESSAGES": {
+                                                                                    "block": {
+                                                                                        "type": "SendNameBlock",
+                                                                                        "id": "SzpeS+[_`,}Ngw+cT;Lg",
+                                                                                        "inputs": {
+                                                                                            "MESSAGE": {
+                                                                                                "block": {
+                                                                                                    "type": "NameAccessBlock",
+                                                                                                    "id": "^)K.}!DxbFB63?Lpl(|A",
+                                                                                                    "fields": {
+                                                                                                        "NAME": "t"
+                                                                                                    }
+                                                                                                }
+                                                                                            }
+                                                                                        },
+                                                                                        "next": {
+                                                                                            "block": {
+                                                                                                "type": "SendNameBlock",
+                                                                                                "id": "VZhK_erDTT?C.M{WoqxL",
+                                                                                                "inputs": {
+                                                                                                    "MESSAGE": {
+                                                                                                        "block": {
+                                                                                                            "type": "NameAccessBlock",
+                                                                                                            "id": "@9SExrdtp)QM7EA|!b._",
+                                                                                                            "fields": {
+                                                                                                                "NAME": "s"
+                                                                                                            }
+                                                                                                        }
+                                                                                                    }
+                                                                                                }
+                                                                                            }
+                                                                                        }
+                                                                                    }
+                                                                                },
+                                                                                "ON": {
+                                                                                    "block": {
+                                                                                        "type": "NameAccessBlock",
+                                                                                        "id": "6$y4wjnQB[zPF[NKW2Ls",
+                                                                                        "fields": {
+                                                                                            "NAME": "switch"
+                                                                                        }
+                                                                                    }
+                                                                                }
+                                                                            },
+                                                                            "next": {
+                                                                                "block": {
+                                                                                    "type": "ProcessCallBlock",
+                                                                                    "id": "u#Pj+2@O4#8~#B6s?9P:",
+                                                                                    "fields": {
+                                                                                        "PROCESS_NAME": "Idtrans"
+                                                                                    },
+                                                                                    "inputs": {
+                                                                                        "ARGS": {
+                                                                                            "block": {
+                                                                                                "type": "ProcessArgBlock",
+                                                                                                "id": "hje^2p)p@I26/v]}GC].",
+                                                                                                "inputs": {
+                                                                                                    "ARG": {
+                                                                                                        "block": {
+                                                                                                            "type": "NameAccessBlock",
+                                                                                                            "id": ".{8m9{NU|L,EIhF#?Dfd",
+                                                                                                            "fields": {
+                                                                                                                "NAME": "gain"
+                                                                                                            }
+                                                                                                        }
+                                                                                                    }
+                                                                                                },
+                                                                                                "next": {
+                                                                                                    "block": {
+                                                                                                        "type": "ProcessArgBlock",
+                                                                                                        "id": "nEv3=!5#],n7/.(4axf%",
+                                                                                                        "inputs": {
+                                                                                                            "ARG": {
+                                                                                                                "block": {
+                                                                                                                    "type": "NameAccessBlock",
+                                                                                                                    "id": "L1j#Z][95QaV!:MPKZ}l",
+                                                                                                                    "fields": {
+                                                                                                                        "NAME": "lose"
+                                                                                                                    }
+                                                                                                                }
+                                                                                                            }
+                                                                                                        }
+                                                                                                    }
+                                                                                                }
+                                                                                            }
+                                                                                        }
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "type": "ProcessBlock",
+                    "id": "M~]):AV0Hp9MUJr?XU9/",
+                    "x": 530,
+                    "y": 110,
+                    "fields": {
+                        "PROCESS": "Idtrans"
+                    },
+                    "inputs": {
+                        "PARAMS": {
+                            "block": {
+                                "type": "ProcessParamBlock",
+                                "id": ".$`-m$XJd/$kb@`2{E#8",
+                                "fields": {
+                                    "NEW": "gain"
+                                },
+                                "next": {
+                                    "block": {
+                                        "type": "ProcessParamBlock",
+                                        "id": "+a!aC8yXE~LvO)B2_@l1",
+                                        "fields": {
+                                            "NEW": "lose"
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "BODY": {
+                            "block": {
+                                "type": "MultiReceiveScopeBlock",
+                                "id": "V]XqRT{Sr6:[jxs:{gX,",
+                                "inputs": {
+                                    "NAMES": {
+                                        "block": {
+                                            "type": "ReceiveNameBlock",
+                                            "id": "7=py8HWgrsy%z4X,wz`X",
+                                            "fields": {
+                                                "NEW": "t"
+                                            },
+                                            "next": {
+                                                "block": {
+                                                    "type": "ReceiveNameBlock",
+                                                    "id": "0%U191$hL1i-!e[HS^Gx",
+                                                    "fields": {
+                                                        "NEW": "s"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "ON": {
+                                        "block": {
+                                            "type": "NameAccessBlock",
+                                            "id": "F((vU8mu+ql.MvwTlY!;",
+                                            "fields": {
+                                                "NAME": "gain"
+                                            }
+                                        }
+                                    },
+                                    "SCOPE": {
+                                        "block": {
+                                            "type": "ProcessCallBlock",
+                                            "id": "NImky;OBGcKzCVT}eq*G",
+                                            "fields": {
+                                                "PROCESS_NAME": "Transmitter"
+                                            },
+                                            "inputs": {
+                                                "ARGS": {
+                                                    "block": {
+                                                        "type": "ProcessArgBlock",
+                                                        "id": "j3DHo)b0bKpg_,Qv75s[",
+                                                        "inputs": {
+                                                            "ARG": {
+                                                                "block": {
+                                                                    "type": "NameAccessBlock",
+                                                                    "id": "z{Hn43TdgJJ|JO9TO/?e",
+                                                                    "fields": {
+                                                                        "NAME": "t"
+                                                                    }
+                                                                }
+                                                            }
+                                                        },
+                                                        "next": {
+                                                            "block": {
+                                                                "type": "ProcessArgBlock",
+                                                                "id": "|QSv?yLJWx9{P$ed]/5y",
+                                                                "inputs": {
+                                                                    "ARG": {
+                                                                        "block": {
+                                                                            "type": "NameAccessBlock",
+                                                                            "id": "_SI1+~,Otznmw#JCWC2C",
+                                                                            "fields": {
+                                                                                "NAME": "s"
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                },
+                                                                "next": {
+                                                                    "block": {
+                                                                        "type": "ProcessArgBlock",
+                                                                        "id": "fCWcH*td0#!A+b=FEs~T",
+                                                                        "inputs": {
+                                                                            "ARG": {
+                                                                                "block": {
+                                                                                    "type": "NameAccessBlock",
+                                                                                    "id": "Y!v_yamGHaHbZ2TKd0*$",
+                                                                                    "fields": {
+                                                                                        "NAME": "gain"
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        },
+                                                                        "next": {
+                                                                            "block": {
+                                                                                "type": "ProcessArgBlock",
+                                                                                "id": "QutozExqfgMghvnIT(Gp",
+                                                                                "inputs": {
+                                                                                    "ARG": {
+                                                                                        "block": {
+                                                                                            "type": "NameAccessBlock",
+                                                                                            "id": "FuHXJvelv/!H/$xfBs:[",
+                                                                                            "fields": {
+                                                                                                "NAME": "lose"
+                                                                                            }
+                                                                                        }
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "type": "ProcessBlock",
+                    "id": "X`/4;-ByopJ0l4slj@7R",
+                    "x": 850,
+                    "y": 110,
+                    "fields": {
+                        "PROCESS": "Phone"
+                    },
+                    "inputs": {
+                        "PARAMS": {
+                            "block": {
+                                "type": "ProcessParamBlock",
+                                "id": "3#q,fQ@WML31ET/jHwbO",
+                                "fields": {
+                                    "NEW": "talk"
+                                },
+                                "next": {
+                                    "block": {
+                                        "type": "ProcessParamBlock",
+                                        "id": "Ih6WK6*TD5=mqBLzNI``",
+                                        "fields": {
+                                            "NEW": "switch"
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "BODY": {
+                            "block": {
+                                "type": "ChoiceParentBlock",
+                                "id": "d6V1HKooi|Z]4ZlRFZ}L",
+                                "inputs": {
+                                    "CHOICE": {
+                                        "block": {
+                                            "type": "ChoiceScopeBlock",
+                                            "id": "51%kUz%@%LWO6;T0i0!T",
+                                            "inputs": {
+                                                "SCOPE": {
+                                                    "block": {
+                                                        "type": "SyncBlock",
+                                                        "id": "osu6;Pa7Pv*lF`JW6T,Y",
+                                                        "inputs": {
+                                                            "ON": {
+                                                                "block": {
+                                                                    "type": "NameAccessBlock",
+                                                                    "id": "i%(uO{UhmJE1IBxU@|2I",
+                                                                    "fields": {
+                                                                        "NAME": "talk"
+                                                                    }
+                                                                }
+                                                            }
+                                                        },
+                                                        "next": {
+                                                            "block": {
+                                                                "type": "ProcessCallBlock",
+                                                                "id": "{M)+=D[9fGr+9([fnZUi",
+                                                                "fields": {
+                                                                    "PROCESS_NAME": "Phone"
+                                                                },
+                                                                "inputs": {
+                                                                    "ARGS": {
+                                                                        "block": {
+                                                                            "type": "ProcessArgBlock",
+                                                                            "id": "JVS*{^L,;uw?4-%6,zmf",
+                                                                            "inputs": {
+                                                                                "ARG": {
+                                                                                    "block": {
+                                                                                        "type": "NameAccessBlock",
+                                                                                        "id": "DGjzF18nz0b2fo%N(Lg8",
+                                                                                        "fields": {
+                                                                                            "NAME": "talk"
+                                                                                        }
+                                                                                    }
+                                                                                }
+                                                                            },
+                                                                            "next": {
+                                                                                "block": {
+                                                                                    "type": "ProcessArgBlock",
+                                                                                    "id": "Q1tI}O2!$wD6ZL|GD0Yt",
+                                                                                    "inputs": {
+                                                                                        "ARG": {
+                                                                                            "block": {
+                                                                                                "type": "NameAccessBlock",
+                                                                                                "id": "{=*(Q@8Ej]47}]@`Mu;M",
+                                                                                                "fields": {
+                                                                                                    "NAME": "switch"
+                                                                                                }
+                                                                                            }
+                                                                                        }
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "next": {
+                                                "block": {
+                                                    "type": "ChoiceScopeBlock",
+                                                    "id": "{OCTbkqipGBnvSVc4QY.",
+                                                    "inputs": {
+                                                        "SCOPE": {
+                                                            "block": {
+                                                                "type": "MultiReceiveScopeBlock",
+                                                                "id": ";NN5a!!:P(zS48AGL+ip",
+                                                                "inputs": {
+                                                                    "NAMES": {
+                                                                        "block": {
+                                                                            "type": "ReceiveNameBlock",
+                                                                            "id": "B:z=e!MwD;ht.HC55Tk;",
+                                                                            "fields": {
+                                                                                "NEW": "t"
+                                                                            },
+                                                                            "next": {
+                                                                                "block": {
+                                                                                    "type": "ReceiveNameBlock",
+                                                                                    "id": "2:pdiD|fUHTs$vubk_:4",
+                                                                                    "fields": {
+                                                                                        "NEW": "s"
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    },
+                                                                    "ON": {
+                                                                        "block": {
+                                                                            "type": "NameAccessBlock",
+                                                                            "id": ".tX!(5#4=sEM7Ky]6hJp",
+                                                                            "fields": {
+                                                                                "NAME": "switch"
+                                                                            }
+                                                                        }
+                                                                    },
+                                                                    "SCOPE": {
+                                                                        "block": {
+                                                                            "type": "ProcessCallBlock",
+                                                                            "id": "V,ukod}dZEAw#s77MT7E",
+                                                                            "fields": {
+                                                                                "PROCESS_NAME": "Phone"
+                                                                            },
+                                                                            "inputs": {
+                                                                                "ARGS": {
+                                                                                    "block": {
+                                                                                        "type": "ProcessArgBlock",
+                                                                                        "id": "@p#:61fsFQnQ~i6vkJZ{",
+                                                                                        "inputs": {
+                                                                                            "ARG": {
+                                                                                                "block": {
+                                                                                                    "type": "NameAccessBlock",
+                                                                                                    "id": "*b-L.A+0VS@db`HNsbm5",
+                                                                                                    "fields": {
+                                                                                                        "NAME": "t"
+                                                                                                    }
+                                                                                                }
+                                                                                            }
+                                                                                        },
+                                                                                        "next": {
+                                                                                            "block": {
+                                                                                                "type": "ProcessArgBlock",
+                                                                                                "id": "DgY+tn)`=Fdou{s_FtnJ",
+                                                                                                "inputs": {
+                                                                                                    "ARG": {
+                                                                                                        "block": {
+                                                                                                            "type": "NameAccessBlock",
+                                                                                                            "id": "AB{Z:0P_3?Wx(lkYIbCW",
+                                                                                                            "fields": {
+                                                                                                                "NAME": "s"
+                                                                                                            }
+                                                                                                        }
+                                                                                                    }
+                                                                                                }
+                                                                                            }
+                                                                                        }
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "type": "ProcessBlock",
+                    "id": "bE!n_6Cb~??m3@Wn.q|U",
+                    "x": 50,
+                    "y": 130,
+                    "fields": {
+                        "PROCESS": "System1"
+                    },
+                    "inputs": {
+                        "BODY": {
+                            "block": {
+                                "type": "MultiRestrictScopeBlock",
+                                "id": "aI+VzHhPNSgPwI|AVoki",
+                                "inputs": {
+                                    "NAMES": {
+                                        "block": {
+                                            "type": "RestrictNameBlock",
+                                            "id": "7S34fmL~%W`TA4M^w_CH",
+                                            "fields": {
+                                                "NEW": "talk1"
+                                            },
+                                            "next": {
+                                                "block": {
+                                                    "type": "RestrictNameBlock",
+                                                    "id": "KTgb`TI`{2yWjoKlOk%8",
+                                                    "fields": {
+                                                        "NEW": "switch1"
+                                                    },
+                                                    "next": {
+                                                        "block": {
+                                                            "type": "RestrictNameBlock",
+                                                            "id": "M`IbC(=~;$(@;g^Iyub/",
+                                                            "fields": {
+                                                                "NEW": "gain1"
+                                                            },
+                                                            "next": {
+                                                                "block": {
+                                                                    "type": "RestrictNameBlock",
+                                                                    "id": ":kUoD|h9(0O0idgyn9fc",
+                                                                    "fields": {
+                                                                        "NEW": "lose1"
+                                                                    },
+                                                                    "next": {
+                                                                        "block": {
+                                                                            "type": "RestrictNameBlock",
+                                                                            "id": "%lx_r6_z{8e6[UJf+[ls",
+                                                                            "fields": {
+                                                                                "NEW": "talk2"
+                                                                            },
+                                                                            "next": {
+                                                                                "block": {
+                                                                                    "type": "RestrictNameBlock",
+                                                                                    "id": "1a%lG0]Z[BHsK;Y(c^SJ",
+                                                                                    "fields": {
+                                                                                        "NEW": "switch2"
+                                                                                    },
+                                                                                    "next": {
+                                                                                        "block": {
+                                                                                            "type": "RestrictNameBlock",
+                                                                                            "id": "jci3$!DrTV!nT;cz-8*$",
+                                                                                            "fields": {
+                                                                                                "NEW": "gain2"
+                                                                                            },
+                                                                                            "next": {
+                                                                                                "block": {
+                                                                                                    "type": "RestrictNameBlock",
+                                                                                                    "id": "K,[#BcxEn{3L3msc*rT`",
+                                                                                                    "fields": {
+                                                                                                        "NEW": "lose2"
+                                                                                                    }
+                                                                                                }
+                                                                                            }
+                                                                                        }
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "SCOPE": {
+                                        "block": {
+                                            "type": "ParallelParentBlock",
+                                            "id": "Wu2u%O0;jo/{EMB:x;qa",
+                                            "inputs": {
+                                                "PARALLEL": {
+                                                    "block": {
+                                                        "type": "ParallelScopeBlock",
+                                                        "id": "0fiPZjK2j?6!d7~Tye,P",
+                                                        "inputs": {
+                                                            "SCOPE": {
+                                                                "block": {
+                                                                    "type": "ProcessCallBlock",
+                                                                    "id": "^[^[Y:,G]G7s.rI)dX-e",
+                                                                    "fields": {
+                                                                        "PROCESS_NAME": "Phone"
+                                                                    },
+                                                                    "inputs": {
+                                                                        "ARGS": {
+                                                                            "block": {
+                                                                                "type": "ProcessArgBlock",
+                                                                                "id": "0`n$DV`vvMH*?$8vM4Lq",
+                                                                                "inputs": {
+                                                                                    "ARG": {
+                                                                                        "block": {
+                                                                                            "type": "NameAccessBlock",
+                                                                                            "id": "bnoh:ip%s|mPSpS1yWwY",
+                                                                                            "fields": {
+                                                                                                "NAME": "talk1"
+                                                                                            }
+                                                                                        }
+                                                                                    }
+                                                                                },
+                                                                                "next": {
+                                                                                    "block": {
+                                                                                        "type": "ProcessArgBlock",
+                                                                                        "id": "*t.A*0!tj(YdNU~+F(5}",
+                                                                                        "inputs": {
+                                                                                            "ARG": {
+                                                                                                "block": {
+                                                                                                    "type": "NameAccessBlock",
+                                                                                                    "id": "HX-xkq)[Di)=G{(o)Ba;",
+                                                                                                    "fields": {
+                                                                                                        "NAME": "switch1"
+                                                                                                    }
+                                                                                                }
+                                                                                            }
+                                                                                        }
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        },
+                                                        "next": {
+                                                            "block": {
+                                                                "type": "ParallelScopeBlock",
+                                                                "id": ",9_ovd8;iz7,e$NUc:|Q",
+                                                                "inputs": {
+                                                                    "SCOPE": {
+                                                                        "block": {
+                                                                            "type": "ProcessCallBlock",
+                                                                            "id": "e-tpd[:7_zz=sk^{907(",
+                                                                            "fields": {
+                                                                                "PROCESS_NAME": "Transmitter"
+                                                                            },
+                                                                            "inputs": {
+                                                                                "ARGS": {
+                                                                                    "block": {
+                                                                                        "type": "ProcessArgBlock",
+                                                                                        "id": "_ZhaOo64wNaU]3$!KO0`",
+                                                                                        "inputs": {
+                                                                                            "ARG": {
+                                                                                                "block": {
+                                                                                                    "type": "NameAccessBlock",
+                                                                                                    "id": "-~cBwdl,]sg9FaEUM{FG",
+                                                                                                    "fields": {
+                                                                                                        "NAME": "talk1"
+                                                                                                    }
+                                                                                                }
+                                                                                            }
+                                                                                        },
+                                                                                        "next": {
+                                                                                            "block": {
+                                                                                                "type": "ProcessArgBlock",
+                                                                                                "id": "@C$(V`a9aTs4:yPo2q*~",
+                                                                                                "inputs": {
+                                                                                                    "ARG": {
+                                                                                                        "block": {
+                                                                                                            "type": "NameAccessBlock",
+                                                                                                            "id": "K0ns46TXD,8wXQ=tvTog",
+                                                                                                            "fields": {
+                                                                                                                "NAME": "switch1"
+                                                                                                            }
+                                                                                                        }
+                                                                                                    }
+                                                                                                },
+                                                                                                "next": {
+                                                                                                    "block": {
+                                                                                                        "type": "ProcessArgBlock",
+                                                                                                        "id": "F0V7#48ngyE-(S1dtw9m",
+                                                                                                        "inputs": {
+                                                                                                            "ARG": {
+                                                                                                                "block": {
+                                                                                                                    "type": "NameAccessBlock",
+                                                                                                                    "id": "pvK~-oe9e=k;SQT7]q?D",
+                                                                                                                    "fields": {
+                                                                                                                        "NAME": "gain1"
+                                                                                                                    }
+                                                                                                                }
+                                                                                                            }
+                                                                                                        },
+                                                                                                        "next": {
+                                                                                                            "block": {
+                                                                                                                "type": "ProcessArgBlock",
+                                                                                                                "id": "4w.0fJwNlbJl_bCS8+ii",
+                                                                                                                "inputs": {
+                                                                                                                    "ARG": {
+                                                                                                                        "block": {
+                                                                                                                            "type": "NameAccessBlock",
+                                                                                                                            "id": "zt/Ou!,28H+H7JGJx]5/",
+                                                                                                                            "fields": {
+                                                                                                                                "NAME": "lose1"
+                                                                                                                            }
+                                                                                                                        }
+                                                                                                                    }
+                                                                                                                }
+                                                                                                            }
+                                                                                                        }
+                                                                                                    }
+                                                                                                }
+                                                                                            }
+                                                                                        }
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                },
+                                                                "next": {
+                                                                    "block": {
+                                                                        "type": "ParallelScopeBlock",
+                                                                        "id": "z)9VmXJ|~OL,shE?}|3,",
+                                                                        "inputs": {
+                                                                            "SCOPE": {
+                                                                                "block": {
+                                                                                    "type": "ProcessCallBlock",
+                                                                                    "id": "2kjrATuRL^h^s}v.K.nF",
+                                                                                    "fields": {
+                                                                                        "PROCESS_NAME": "Idtrans"
+                                                                                    },
+                                                                                    "inputs": {
+                                                                                        "ARGS": {
+                                                                                            "block": {
+                                                                                                "type": "ProcessArgBlock",
+                                                                                                "id": "jgabkBHpV=XFr,RK9o~v",
+                                                                                                "inputs": {
+                                                                                                    "ARG": {
+                                                                                                        "block": {
+                                                                                                            "type": "NameAccessBlock",
+                                                                                                            "id": "$Ed7,(aXabq?=`dAJH=f",
+                                                                                                            "fields": {
+                                                                                                                "NAME": "gain2"
+                                                                                                            }
+                                                                                                        }
+                                                                                                    }
+                                                                                                },
+                                                                                                "next": {
+                                                                                                    "block": {
+                                                                                                        "type": "ProcessArgBlock",
+                                                                                                        "id": "N(IMZ?UR)0wK]MDX)pdr",
+                                                                                                        "inputs": {
+                                                                                                            "ARG": {
+                                                                                                                "block": {
+                                                                                                                    "type": "NameAccessBlock",
+                                                                                                                    "id": "^^!5yg5$/[^Y#c3EwX^g",
+                                                                                                                    "fields": {
+                                                                                                                        "NAME": "lose2"
+                                                                                                                    }
+                                                                                                                }
+                                                                                                            }
+                                                                                                        }
+                                                                                                    }
+                                                                                                }
+                                                                                            }
+                                                                                        }
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        },
+                                                                        "next": {
+                                                                            "block": {
+                                                                                "type": "ParallelScopeBlock",
+                                                                                "id": "MM6ICj)Z?!(HXY4c4wig",
+                                                                                "inputs": {
+                                                                                    "SCOPE": {
+                                                                                        "block": {
+                                                                                            "type": "ProcessCallBlock",
+                                                                                            "id": "z90rfULf_LGJAzObdUn^",
+                                                                                            "fields": {
+                                                                                                "PROCESS_NAME": "Control1"
+                                                                                            },
+                                                                                            "inputs": {
+                                                                                                "ARGS": {
+                                                                                                    "block": {
+                                                                                                        "type": "ProcessArgBlock",
+                                                                                                        "id": "esBH?tE.[P|3(AbYk78s",
+                                                                                                        "inputs": {
+                                                                                                            "ARG": {
+                                                                                                                "block": {
+                                                                                                                    "type": "NameAccessBlock",
+                                                                                                                    "id": "igyu]6?bg(,*`~_y}IQy",
+                                                                                                                    "fields": {
+                                                                                                                        "NAME": "talk1"
+                                                                                                                    }
+                                                                                                                }
+                                                                                                            }
+                                                                                                        },
+                                                                                                        "next": {
+                                                                                                            "block": {
+                                                                                                                "type": "ProcessArgBlock",
+                                                                                                                "id": "?Cg-];oFwC+,xZ-!mQO,",
+                                                                                                                "inputs": {
+                                                                                                                    "ARG": {
+                                                                                                                        "block": {
+                                                                                                                            "type": "NameAccessBlock",
+                                                                                                                            "id": ")=mH,3zd4;],rqjnM@Cj",
+                                                                                                                            "fields": {
+                                                                                                                                "NAME": "switch1"
+                                                                                                                            }
+                                                                                                                        }
+                                                                                                                    }
+                                                                                                                },
+                                                                                                                "next": {
+                                                                                                                    "block": {
+                                                                                                                        "type": "ProcessArgBlock",
+                                                                                                                        "id": "kN${oD@9{leZ.,!Q)nq6",
+                                                                                                                        "inputs": {
+                                                                                                                            "ARG": {
+                                                                                                                                "block": {
+                                                                                                                                    "type": "NameAccessBlock",
+                                                                                                                                    "id": "l(aNfr{Mf5:yV$/hI85C",
+                                                                                                                                    "fields": {
+                                                                                                                                        "NAME": "gain1"
+                                                                                                                                    }
+                                                                                                                                }
+                                                                                                                            }
+                                                                                                                        },
+                                                                                                                        "next": {
+                                                                                                                            "block": {
+                                                                                                                                "type": "ProcessArgBlock",
+                                                                                                                                "id": ".Ws-wsE$RGI?m%A*8{8#",
+                                                                                                                                "inputs": {
+                                                                                                                                    "ARG": {
+                                                                                                                                        "block": {
+                                                                                                                                            "type": "NameAccessBlock",
+                                                                                                                                            "id": "!nG!y|^:l{?08n*:3g[@",
+                                                                                                                                            "fields": {
+                                                                                                                                                "NAME": "lose1"
+                                                                                                                                            }
+                                                                                                                                        }
+                                                                                                                                    }
+                                                                                                                                },
+                                                                                                                                "next": {
+                                                                                                                                    "block": {
+                                                                                                                                        "type": "ProcessArgBlock",
+                                                                                                                                        "id": "dIfUje#0Fy:Xnhjj$yz}",
+                                                                                                                                        "inputs": {
+                                                                                                                                            "ARG": {
+                                                                                                                                                "block": {
+                                                                                                                                                    "type": "NameAccessBlock",
+                                                                                                                                                    "id": "_v$enip:xf48~BJDYe8|",
+                                                                                                                                                    "fields": {
+                                                                                                                                                        "NAME": "talk2"
+                                                                                                                                                    }
+                                                                                                                                                }
+                                                                                                                                            }
+                                                                                                                                        },
+                                                                                                                                        "next": {
+                                                                                                                                            "block": {
+                                                                                                                                                "type": "ProcessArgBlock",
+                                                                                                                                                "id": "3-5fq*=:5YvX`lYG{J9W",
+                                                                                                                                                "inputs": {
+                                                                                                                                                    "ARG": {
+                                                                                                                                                        "block": {
+                                                                                                                                                            "type": "NameAccessBlock",
+                                                                                                                                                            "id": "kU4}=+lOg(nn~wp`RR=[",
+                                                                                                                                                            "fields": {
+                                                                                                                                                                "NAME": "switch2"
+                                                                                                                                                            }
+                                                                                                                                                        }
+                                                                                                                                                    }
+                                                                                                                                                },
+                                                                                                                                                "next": {
+                                                                                                                                                    "block": {
+                                                                                                                                                        "type": "ProcessArgBlock",
+                                                                                                                                                        "id": "6zyT1!sTZ+DCq8;0~G|d",
+                                                                                                                                                        "inputs": {
+                                                                                                                                                            "ARG": {
+                                                                                                                                                                "block": {
+                                                                                                                                                                    "type": "NameAccessBlock",
+                                                                                                                                                                    "id": "NF:PVh.2Vv;i%HB.aff%",
+                                                                                                                                                                    "fields": {
+                                                                                                                                                                        "NAME": "gain2"
+                                                                                                                                                                    }
+                                                                                                                                                                }
+                                                                                                                                                            }
+                                                                                                                                                        },
+                                                                                                                                                        "next": {
+                                                                                                                                                            "block": {
+                                                                                                                                                                "type": "ProcessArgBlock",
+                                                                                                                                                                "id": "AatsdJ`Hhg_fdLtp~#k.",
+                                                                                                                                                                "inputs": {
+                                                                                                                                                                    "ARG": {
+                                                                                                                                                                        "block": {
+                                                                                                                                                                            "type": "NameAccessBlock",
+                                                                                                                                                                            "id": "${PPoonP8G8R7[fzFguh",
+                                                                                                                                                                            "fields": {
+                                                                                                                                                                                "NAME": "lose2"
+                                                                                                                                                                            }
+                                                                                                                                                                        }
+                                                                                                                                                                    }
+                                                                                                                                                                }
+                                                                                                                                                            }
+                                                                                                                                                        }
+                                                                                                                                                    }
+                                                                                                                                                }
+                                                                                                                                            }
+                                                                                                                                        }
+                                                                                                                                    }
+                                                                                                                                }
+                                                                                                                            }
+                                                                                                                        }
+                                                                                                                    }
+                                                                                                                }
+                                                                                                            }
+                                                                                                        }
+                                                                                                    }
+                                                                                                }
+                                                                                            }
+                                                                                        }
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "type": "ProcessBlock",
+                    "id": "mo%hU42bUFxpKh|LCs,9",
+                    "x": 1250,
+                    "y": 110,
+                    "fields": {
+                        "PROCESS": "Control1"
+                    },
+                    "inputs": {
+                        "PARAMS": {
+                            "block": {
+                                "type": "ProcessParamBlock",
+                                "id": "q{7{dY8VdqnNT,!x`C[V",
+                                "fields": {
+                                    "NEW": "talk1"
+                                },
+                                "next": {
+                                    "block": {
+                                        "type": "ProcessParamBlock",
+                                        "id": "p74kJqHtUCE`x}Pn92A{",
+                                        "fields": {
+                                            "NEW": "switch1"
+                                        },
+                                        "next": {
+                                            "block": {
+                                                "type": "ProcessParamBlock",
+                                                "id": "RpRQiZC9xGXj2DkioV;-",
+                                                "fields": {
+                                                    "NEW": "gain1"
+                                                },
+                                                "next": {
+                                                    "block": {
+                                                        "type": "ProcessParamBlock",
+                                                        "id": "Zn)I$.Qq$1YdI_xT9gaa",
+                                                        "fields": {
+                                                            "NEW": "lose1"
+                                                        },
+                                                        "next": {
+                                                            "block": {
+                                                                "type": "ProcessParamBlock",
+                                                                "id": "_/ZRgR2$`fk|E6XVbs4I",
+                                                                "fields": {
+                                                                    "NEW": "talk2"
+                                                                },
+                                                                "next": {
+                                                                    "block": {
+                                                                        "type": "ProcessParamBlock",
+                                                                        "id": "WENHptakv6b=:jz`%XF*",
+                                                                        "fields": {
+                                                                            "NEW": "switch2"
+                                                                        },
+                                                                        "next": {
+                                                                            "block": {
+                                                                                "type": "ProcessParamBlock",
+                                                                                "id": "OFqkt%/F)|$9-b${1a{t",
+                                                                                "fields": {
+                                                                                    "NEW": "gain2"
+                                                                                },
+                                                                                "next": {
+                                                                                    "block": {
+                                                                                        "type": "ProcessParamBlock",
+                                                                                        "id": "pcS^^rl=A/EfFH:*Se38",
+                                                                                        "fields": {
+                                                                                            "NEW": "lose2"
+                                                                                        }
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "BODY": {
+                            "block": {
+                                "type": "MultiSendBlock",
+                                "id": "iPM#799wSaIXY9O3^V-`",
+                                "inputs": {
+                                    "MESSAGES": {
+                                        "block": {
+                                            "type": "SendNameBlock",
+                                            "id": "lG*J^Bh:]K09/U0.F*t2",
+                                            "inputs": {
+                                                "MESSAGE": {
+                                                    "block": {
+                                                        "type": "NameAccessBlock",
+                                                        "id": "CZKpkT;dDaOVVEe$e3Zc",
+                                                        "fields": {
+                                                            "NAME": "talk2"
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "next": {
+                                                "block": {
+                                                    "type": "SendNameBlock",
+                                                    "id": "k},MkVHa@p%#Xw8#rR_1",
+                                                    "inputs": {
+                                                        "MESSAGE": {
+                                                            "block": {
+                                                                "type": "NameAccessBlock",
+                                                                "id": "5z)zP[MnqIwhjAp}$3Z-",
+                                                                "fields": {
+                                                                    "NAME": "switch2"
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "ON": {
+                                        "block": {
+                                            "type": "NameAccessBlock",
+                                            "id": "Z~;*Bn:#3(D1nnTFO!S^",
+                                            "fields": {
+                                                "NAME": "lose1"
+                                            }
+                                        }
+                                    }
+                                },
+                                "next": {
+                                    "block": {
+                                        "type": "MultiSendBlock",
+                                        "id": "|CF8}DGb.9XzDof989;G",
+                                        "inputs": {
+                                            "MESSAGES": {
+                                                "block": {
+                                                    "type": "SendNameBlock",
+                                                    "id": "$cGls8JTkihL~.:UjaA8",
+                                                    "inputs": {
+                                                        "MESSAGE": {
+                                                            "block": {
+                                                                "type": "NameAccessBlock",
+                                                                "id": "^9:s.cPyA:qBoEVQ/?3+",
+                                                                "fields": {
+                                                                    "NAME": "talk2"
+                                                                }
+                                                            }
+                                                        }
+                                                    },
+                                                    "next": {
+                                                        "block": {
+                                                            "type": "SendNameBlock",
+                                                            "id": "ip=6jdwXVa/%5!3Sx6FA",
+                                                            "inputs": {
+                                                                "MESSAGE": {
+                                                                    "block": {
+                                                                        "type": "NameAccessBlock",
+                                                                        "id": "zwFXi%{LTJIuZ~.]:cnQ",
+                                                                        "fields": {
+                                                                            "NAME": "switch2"
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "ON": {
+                                                "block": {
+                                                    "type": "NameAccessBlock",
+                                                    "id": "BU})nF1(l3KTZ0EOpEEu",
+                                                    "fields": {
+                                                        "NAME": "gain2"
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "next": {
+                                            "block": {
+                                                "type": "ProcessCallBlock",
+                                                "id": "O%hTH!!8-r21E.HmTu83",
+                                                "fields": {
+                                                    "PROCESS_NAME": "Control2"
+                                                },
+                                                "inputs": {
+                                                    "ARGS": {
+                                                        "block": {
+                                                            "type": "ProcessArgBlock",
+                                                            "id": "3l{~Jbi;VrVVR;^:j2h1",
+                                                            "inputs": {
+                                                                "ARG": {
+                                                                    "block": {
+                                                                        "type": "NameAccessBlock",
+                                                                        "id": "]4l6+=;c%N/ny|.3(tcg",
+                                                                        "fields": {
+                                                                            "NAME": "talk1"
+                                                                        }
+                                                                    }
+                                                                }
+                                                            },
+                                                            "next": {
+                                                                "block": {
+                                                                    "type": "ProcessArgBlock",
+                                                                    "id": "~UnlWqpFx1JL~6T9(t5~",
+                                                                    "inputs": {
+                                                                        "ARG": {
+                                                                            "block": {
+                                                                                "type": "NameAccessBlock",
+                                                                                "id": "lMbcJ|+w1MGh1bSkpTj@",
+                                                                                "fields": {
+                                                                                    "NAME": "switch1"
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    },
+                                                                    "next": {
+                                                                        "block": {
+                                                                            "type": "ProcessArgBlock",
+                                                                            "id": "^^1gBDle$ACB4z)merj:",
+                                                                            "inputs": {
+                                                                                "ARG": {
+                                                                                    "block": {
+                                                                                        "type": "NameAccessBlock",
+                                                                                        "id": "c~Et]|O3bfPbLyK=xZ0O",
+                                                                                        "fields": {
+                                                                                            "NAME": "gain1"
+                                                                                        }
+                                                                                    }
+                                                                                }
+                                                                            },
+                                                                            "next": {
+                                                                                "block": {
+                                                                                    "type": "ProcessArgBlock",
+                                                                                    "id": "Xo9YWT8pyway/zNRL*[a",
+                                                                                    "inputs": {
+                                                                                        "ARG": {
+                                                                                            "block": {
+                                                                                                "type": "NameAccessBlock",
+                                                                                                "id": "[@3E?q@F%l-u!]T7z%hd",
+                                                                                                "fields": {
+                                                                                                    "NAME": "lose1"
+                                                                                                }
+                                                                                            }
+                                                                                        }
+                                                                                    },
+                                                                                    "next": {
+                                                                                        "block": {
+                                                                                            "type": "ProcessArgBlock",
+                                                                                            "id": "NhuHuD2Vk:5SKlH?O5BB",
+                                                                                            "inputs": {
+                                                                                                "ARG": {
+                                                                                                    "block": {
+                                                                                                        "type": "NameAccessBlock",
+                                                                                                        "id": "V]T](rglE?{l:OnOQx!e",
+                                                                                                        "fields": {
+                                                                                                            "NAME": "talk2"
+                                                                                                        }
+                                                                                                    }
+                                                                                                }
+                                                                                            },
+                                                                                            "next": {
+                                                                                                "block": {
+                                                                                                    "type": "ProcessArgBlock",
+                                                                                                    "id": "M2(Gf`h3kD)y~hA,`G}*",
+                                                                                                    "inputs": {
+                                                                                                        "ARG": {
+                                                                                                            "block": {
+                                                                                                                "type": "NameAccessBlock",
+                                                                                                                "id": "#7JTWXs4`_^Wyj;tL+q.",
+                                                                                                                "fields": {
+                                                                                                                    "NAME": "switch2"
+                                                                                                                }
+                                                                                                            }
+                                                                                                        }
+                                                                                                    },
+                                                                                                    "next": {
+                                                                                                        "block": {
+                                                                                                            "type": "ProcessArgBlock",
+                                                                                                            "id": "f+RRONv`qup3M_8wn#x2",
+                                                                                                            "inputs": {
+                                                                                                                "ARG": {
+                                                                                                                    "block": {
+                                                                                                                        "type": "NameAccessBlock",
+                                                                                                                        "id": "WS}vR{UI8`TX;A#`]{?s",
+                                                                                                                        "fields": {
+                                                                                                                            "NAME": "gain2"
+                                                                                                                        }
+                                                                                                                    }
+                                                                                                                }
+                                                                                                            },
+                                                                                                            "next": {
+                                                                                                                "block": {
+                                                                                                                    "type": "ProcessArgBlock",
+                                                                                                                    "id": ";h8HQ@;e7:Cxty5(J2=9",
+                                                                                                                    "inputs": {
+                                                                                                                        "ARG": {
+                                                                                                                            "block": {
+                                                                                                                                "type": "NameAccessBlock",
+                                                                                                                                "id": "e*#,g(]G=0[|_4Ga=H{#",
+                                                                                                                                "fields": {
+                                                                                                                                    "NAME": "lose2"
+                                                                                                                                }
+                                                                                                                            }
+                                                                                                                        }
+                                                                                                                    }
+                                                                                                                }
+                                                                                                            }
+                                                                                                        }
+                                                                                                    }
+                                                                                                }
+                                                                                            }
+                                                                                        }
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "type": "ProcessBlock",
+                    "id": "F/M5*$!VGUT[^!)|][qh",
+                    "x": 1630,
+                    "y": 90,
+                    "fields": {
+                        "PROCESS": "Control2"
+                    },
+                    "inputs": {
+                        "PARAMS": {
+                            "block": {
+                                "type": "ProcessParamBlock",
+                                "id": "Yl+eUU$muJ:x:e3R8;z{",
+                                "fields": {
+                                    "NEW": "talk1"
+                                },
+                                "next": {
+                                    "block": {
+                                        "type": "ProcessParamBlock",
+                                        "id": "V77EHR,FWihl7YmvG}I$",
+                                        "fields": {
+                                            "NEW": "switch1"
+                                        },
+                                        "next": {
+                                            "block": {
+                                                "type": "ProcessParamBlock",
+                                                "id": "o0=qq+3_eygPAbXUp1#v",
+                                                "fields": {
+                                                    "NEW": "gain1"
+                                                },
+                                                "next": {
+                                                    "block": {
+                                                        "type": "ProcessParamBlock",
+                                                        "id": "[{|eF9=Ert[1[Qj4+#_6",
+                                                        "fields": {
+                                                            "NEW": "lose1"
+                                                        },
+                                                        "next": {
+                                                            "block": {
+                                                                "type": "ProcessParamBlock",
+                                                                "id": "]P4]KiXhP.UxWg!=SJRi",
+                                                                "fields": {
+                                                                    "NEW": "talk2"
+                                                                },
+                                                                "next": {
+                                                                    "block": {
+                                                                        "type": "ProcessParamBlock",
+                                                                        "id": "U9qkXuE~$5sz0?(yFD;6",
+                                                                        "fields": {
+                                                                            "NEW": "switch2"
+                                                                        },
+                                                                        "next": {
+                                                                            "block": {
+                                                                                "type": "ProcessParamBlock",
+                                                                                "id": "27znhO~EASIk%_Nmz?Jo",
+                                                                                "fields": {
+                                                                                    "NEW": "gain2"
+                                                                                },
+                                                                                "next": {
+                                                                                    "block": {
+                                                                                        "type": "ProcessParamBlock",
+                                                                                        "id": "WuT$4AF-3,Px5-EH6pV0",
+                                                                                        "fields": {
+                                                                                            "NEW": "lose2"
+                                                                                        }
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "BODY": {
+                            "block": {
+                                "type": "MultiSendBlock",
+                                "id": "GuSQYJouy0j/C{o|Y9P!",
+                                "inputs": {
+                                    "MESSAGES": {
+                                        "block": {
+                                            "type": "SendNameBlock",
+                                            "id": "z:_`w?Cj5Y*gQ8r:y=C_",
+                                            "inputs": {
+                                                "MESSAGE": {
+                                                    "block": {
+                                                        "type": "NameAccessBlock",
+                                                        "id": ".G-20w`hVXBkji+|Z}5n",
+                                                        "fields": {
+                                                            "NAME": "talk1"
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "next": {
+                                                "block": {
+                                                    "type": "SendNameBlock",
+                                                    "id": "|;w3yOSR#|_XUm(ORkme",
+                                                    "inputs": {
+                                                        "MESSAGE": {
+                                                            "block": {
+                                                                "type": "NameAccessBlock",
+                                                                "id": "o(@2*s0OVFN4s.%Xus4h",
+                                                                "fields": {
+                                                                    "NAME": "switch1"
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "ON": {
+                                        "block": {
+                                            "type": "NameAccessBlock",
+                                            "id": "top-`m1WNGW8K{SLpR.E",
+                                            "fields": {
+                                                "NAME": "lose2"
+                                            }
+                                        }
+                                    }
+                                },
+                                "next": {
+                                    "block": {
+                                        "type": "MultiSendBlock",
+                                        "id": "MR5i}}1EdWFshG85sv~o",
+                                        "inputs": {
+                                            "MESSAGES": {
+                                                "block": {
+                                                    "type": "SendNameBlock",
+                                                    "id": "U.cuK*g|30~I6Yr.kgt7",
+                                                    "inputs": {
+                                                        "MESSAGE": {
+                                                            "block": {
+                                                                "type": "NameAccessBlock",
+                                                                "id": "_m6GK7zCx`ayo(t_pb7(",
+                                                                "fields": {
+                                                                    "NAME": "talk1"
+                                                                }
+                                                            }
+                                                        }
+                                                    },
+                                                    "next": {
+                                                        "block": {
+                                                            "type": "SendNameBlock",
+                                                            "id": "{moq{b+THrw6HV0t]RZV",
+                                                            "inputs": {
+                                                                "MESSAGE": {
+                                                                    "block": {
+                                                                        "type": "NameAccessBlock",
+                                                                        "id": "F1]xEhHGT-sg~28VXsk5",
+                                                                        "fields": {
+                                                                            "NAME": "switch1"
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "ON": {
+                                                "block": {
+                                                    "type": "NameAccessBlock",
+                                                    "id": "(hBS%E)u!B2CLkO0Y1Wh",
+                                                    "fields": {
+                                                        "NAME": "gain1"
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "next": {
+                                            "block": {
+                                                "type": "ProcessCallBlock",
+                                                "id": "K;-q4aIcnu|aKr!zIPoG",
+                                                "fields": {
+                                                    "PROCESS_NAME": "Control1"
+                                                },
+                                                "inputs": {
+                                                    "ARGS": {
+                                                        "block": {
+                                                            "type": "ProcessArgBlock",
+                                                            "id": "chm;tT@KuwMOESuL!gwP",
+                                                            "inputs": {
+                                                                "ARG": {
+                                                                    "block": {
+                                                                        "type": "NameAccessBlock",
+                                                                        "id": "-zoxxL/*!3ci)xc%QCVW",
+                                                                        "fields": {
+                                                                            "NAME": "talk1"
+                                                                        }
+                                                                    }
+                                                                }
+                                                            },
+                                                            "next": {
+                                                                "block": {
+                                                                    "type": "ProcessArgBlock",
+                                                                    "id": "A!$w[L@=;{B]WPOl79CG",
+                                                                    "inputs": {
+                                                                        "ARG": {
+                                                                            "block": {
+                                                                                "type": "NameAccessBlock",
+                                                                                "id": "/E:2/neF{=`iUui[]nL^",
+                                                                                "fields": {
+                                                                                    "NAME": "switch1"
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    },
+                                                                    "next": {
+                                                                        "block": {
+                                                                            "type": "ProcessArgBlock",
+                                                                            "id": "r0-f9DxHk+d6AnJrAejm",
+                                                                            "inputs": {
+                                                                                "ARG": {
+                                                                                    "block": {
+                                                                                        "type": "NameAccessBlock",
+                                                                                        "id": "{hTeeH[On^wn^0(PPYzA",
+                                                                                        "fields": {
+                                                                                            "NAME": "gain1"
+                                                                                        }
+                                                                                    }
+                                                                                }
+                                                                            },
+                                                                            "next": {
+                                                                                "block": {
+                                                                                    "type": "ProcessArgBlock",
+                                                                                    "id": "9E3kuSlp3e#=l0C%6-!:",
+                                                                                    "inputs": {
+                                                                                        "ARG": {
+                                                                                            "block": {
+                                                                                                "type": "NameAccessBlock",
+                                                                                                "id": "-3+n7#z0#vy0}OFhI[as",
+                                                                                                "fields": {
+                                                                                                    "NAME": "lose1"
+                                                                                                }
+                                                                                            }
+                                                                                        }
+                                                                                    },
+                                                                                    "next": {
+                                                                                        "block": {
+                                                                                            "type": "ProcessArgBlock",
+                                                                                            "id": "?ZE~qsTg+?,-|*UOJ_/+",
+                                                                                            "inputs": {
+                                                                                                "ARG": {
+                                                                                                    "block": {
+                                                                                                        "type": "NameAccessBlock",
+                                                                                                        "id": "2nQO:[[oZQue:|SS-YP+",
+                                                                                                        "fields": {
+                                                                                                            "NAME": "talk2"
+                                                                                                        }
+                                                                                                    }
+                                                                                                }
+                                                                                            },
+                                                                                            "next": {
+                                                                                                "block": {
+                                                                                                    "type": "ProcessArgBlock",
+                                                                                                    "id": "yCuCYiBa$~tv@jnF].l,",
+                                                                                                    "inputs": {
+                                                                                                        "ARG": {
+                                                                                                            "block": {
+                                                                                                                "type": "NameAccessBlock",
+                                                                                                                "id": "nP%,w8pF8mGVk;uo0Zpd",
+                                                                                                                "fields": {
+                                                                                                                    "NAME": "switch2"
+                                                                                                                }
+                                                                                                            }
+                                                                                                        }
+                                                                                                    },
+                                                                                                    "next": {
+                                                                                                        "block": {
+                                                                                                            "type": "ProcessArgBlock",
+                                                                                                            "id": "TSVrq3+nkeu|S+?K@#s]",
+                                                                                                            "inputs": {
+                                                                                                                "ARG": {
+                                                                                                                    "block": {
+                                                                                                                        "type": "NameAccessBlock",
+                                                                                                                        "id": "aefsLt9nk))[R=D2y,-r",
+                                                                                                                        "fields": {
+                                                                                                                            "NAME": "gain2"
+                                                                                                                        }
+                                                                                                                    }
+                                                                                                                }
+                                                                                                            },
+                                                                                                            "next": {
+                                                                                                                "block": {
+                                                                                                                    "type": "ProcessArgBlock",
+                                                                                                                    "id": "9hTg{#~x`lUr.eYdd${K",
+                                                                                                                    "inputs": {
+                                                                                                                        "ARG": {
+                                                                                                                            "block": {
+                                                                                                                                "type": "NameAccessBlock",
+                                                                                                                                "id": "E,q7PPWLb(aWQnIRppc8",
+                                                                                                                                "fields": {
+                                                                                                                                    "NAME": "lose2"
+                                                                                                                                }
+                                                                                                                            }
+                                                                                                                        }
+                                                                                                                    }
+                                                                                                                }
+                                                                                                            }
+                                                                                                        }
+                                                                                                    }
+                                                                                                }
+                                                                                            }
+                                                                                        }
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "type": "MainBlock",
+                    "id": "b:G!5^di7L)4I?6EsMe?",
+                    "x": 850,
+                    "y": 830,
+                    "icons": {
+                        "comment": {
+                            "text": "Example taken from R. Milner's Communicating and Mobile Systems - 8.2 Mobile Phones",
+                            "pinned": false,
+                            "height": 81.80845642089844,
+                            "width": 279.35760498046875
+                        }
+                    },
+                    "inputs": {
+                        "MAIN": {
+                            "block": {
+                                "type": "ProcessCallBlock",
+                                "id": "D18+h68)7~F2pp6~`4zS",
+                                "fields": {
+                                    "PROCESS_NAME": "System1"
+                                }
+                            }
+                        }
+                    }
+                }
+            ]
+        }
+    },
+    "state": {
+        "scopeTree": {
+            "global": {
+                "names": [],
+                "type": "global",
+                "d887a620ad1420a3caeaf8b72dcba53781f819a0b4d0106b9775445aa9aad044": {
+                    "names": [],
+                    "type": "ProcessBlock",
+                    "65697970ce265815c55f1d2d9915a322c0e6a62db1c7024e27c3a1b17b34828f": {
+                        "names": [
+                            "talk1",
+                            "switch1",
+                            "gain1",
+                            "lose1",
+                            "talk2",
+                            "switch2",
+                            "gain2",
+                            "lose2"
+                        ],
+                        "type": "MultiRestrictScopeBlock",
+                        "546d6af66f4169b0e7b483321af65d7890a09cd25cde5cf760172b178fc0a2d5": {
+                            "names": [],
+                            "type": "ParallelParentBlock",
+                            "ddfc2366b827eace12a07307dd45ff3a7cfebaeac6d62b8f4e94ca7bf921230f": {
+                                "names": [],
+                                "type": "ParallelScopeBlock"
+                            },
+                            "e063d449cb8f9d9d990081c786bee488713d67693bb4e53e382597df4e0715fa": {
+                                "names": [],
+                                "type": "ParallelScopeBlock"
+                            },
+                            "fc76970a5a2fcc07ec86ee00611fd9f807f560dcf03b57e87f5892b43c31ac4c": {
+                                "names": [],
+                                "type": "ParallelScopeBlock"
+                            },
+                            "5829713f89b0417c9d26d9cf057d81e5c6745ae8f6adf8bd53de95f4decb1a9d": {
+                                "names": [],
+                                "type": "ParallelScopeBlock"
+                            }
+                        }
+                    }
+                },
+                "f98354ce8e151b92077f8f960599beff9d7c42f14e6e9e2379c6a00c85468352": {
+                    "names": [
+                        "gain",
+                        "lose"
+                    ],
+                    "type": "ProcessBlock",
+                    "613243802bb449610eefef1c23d4cf603cab4e42da406b639d9fd9b040f8dd0c": {
+                        "names": [
+                            "t",
+                            "s"
+                        ],
+                        "type": "MultiReceiveScopeBlock"
+                    }
+                },
+                "8dbab0a80028bea259affa40c442bf12da6e5cda07deb5626f56670d66aa8067": {
+                    "names": [
+                        "talk",
+                        "switch"
+                    ],
+                    "type": "ProcessBlock",
+                    "4b5c3173e7899768a9c65ba6c02d7380a757bc13bc93e581eabc8e6ffd038d3d": {
+                        "names": [
+                            "t",
+                            "s"
+                        ],
+                        "type": "MultiReceiveScopeBlock"
+                    },
+                    "6f150509e1616f30067a7a39dd502a255f3055b39215905cd8dc5329a30e515c": {
+                        "names": [],
+                        "type": "ChoiceParentBlock",
+                        "ffa507377e56f139ef85175882d0a2c3f8ea9b716df3c3feeadf587c811ad6e5": {
+                            "names": [],
+                            "type": "ChoiceScopeBlock"
+                        },
+                        "81138bc470deccf0305d526337ce2918969cceebd608d546c40ae5a2b410b3df": {
+                            "names": [],
+                            "type": "ChoiceScopeBlock",
+                            "4b5c3173e7899768a9c65ba6c02d7380a757bc13bc93e581eabc8e6ffd038d3d": {
+                                "names": [
+                                    "t",
+                                    "s"
+                                ],
+                                "type": "MultiReceiveScopeBlock"
+                            }
+                        }
+                    }
+                },
+                "04e99e42953293db03a11059732873a0b23e7815b1dc75271ab994d17e8b3561": {
+                    "names": [
+                        "talk1",
+                        "switch1",
+                        "gain1",
+                        "lose1",
+                        "talk2",
+                        "switch2",
+                        "gain2",
+                        "lose2"
+                    ],
+                    "type": "ProcessBlock"
+                },
+                "82f624025a363291219ab667cc382127d3bfb7b92a4d451701e0341884e76cab": {
+                    "names": [
+                        "talk1",
+                        "switch1",
+                        "gain1",
+                        "lose1",
+                        "talk2",
+                        "switch2",
+                        "gain2",
+                        "lose2"
+                    ],
+                    "type": "ProcessBlock"
+                },
+                "30b9c450be38e7977f67d0193bdd4d94722173149e4e593e74a92c0642b1a07b": {
+                    "names": [
+                        "talk",
+                        "switch",
+                        "gain",
+                        "lose"
+                    ],
+                    "type": "ProcessBlock",
+                    "0c4a8b193d9826c5a370ffc8dfc2249867aa958245cefba8bbcee17ed4157970": {
+                        "names": [
+                            "t",
+                            "s"
+                        ],
+                        "type": "MultiReceiveScopeBlock"
+                    },
+                    "06099c67d78f429e1ce6cfdde64838dfd0ff547af12846db5c2b83f3251e9d8e": {
+                        "names": [],
+                        "type": "ChoiceParentBlock",
+                        "44533eaaf9520713a45f17fcbe189d406c27758c845f70f1f55503672ad7982a": {
+                            "names": [],
+                            "type": "ChoiceScopeBlock"
+                        },
+                        "8bf8a5f509d1c31dc817a57c71ce22d157e8748b0316442d4216f404b2444862": {
+                            "names": [],
+                            "type": "ChoiceScopeBlock",
+                            "0c4a8b193d9826c5a370ffc8dfc2249867aa958245cefba8bbcee17ed4157970": {
+                                "names": [
+                                    "t",
+                                    "s"
+                                ],
+                                "type": "MultiReceiveScopeBlock"
+                            }
+                        }
+                    }
+                },
+                "6be9865982c29f8d09d8bca7dd61c3910bad0a29e3756cb8c0715eddd5d93057": {
+                    "names": [],
+                    "type": "MainBlock"
+                }
+            }
+        },
+        "processes": {
+            "System1": {
+                "id": "d887a620ad1420a3caeaf8b72dcba53781f819a0b4d0106b9775445aa9aad044",
+                "rawId": "bE!n_6Cb~??m3@Wn.q|U",
+                "params": []
+            },
+            "Idtrans": {
+                "id": "f98354ce8e151b92077f8f960599beff9d7c42f14e6e9e2379c6a00c85468352",
+                "rawId": "M~]):AV0Hp9MUJr?XU9/",
+                "params": [
+                    "gain",
+                    "lose"
+                ]
+            },
+            "Phone": {
+                "id": "8dbab0a80028bea259affa40c442bf12da6e5cda07deb5626f56670d66aa8067",
+                "rawId": "X`/4;-ByopJ0l4slj@7R",
+                "params": [
+                    "talk",
+                    "switch"
+                ]
+            },
+            "Control2": {
+                "id": "04e99e42953293db03a11059732873a0b23e7815b1dc75271ab994d17e8b3561",
+                "rawId": "F/M5*$!VGUT[^!)|][qh",
+                "params": [
+                    "talk1",
+                    "switch1",
+                    "gain1",
+                    "lose1",
+                    "talk2",
+                    "switch2",
+                    "gain2",
+                    "lose2"
+                ]
+            },
+            "Control1": {
+                "id": "82f624025a363291219ab667cc382127d3bfb7b92a4d451701e0341884e76cab",
+                "rawId": "mo%hU42bUFxpKh|LCs,9",
+                "params": [
+                    "talk1",
+                    "switch1",
+                    "gain1",
+                    "lose1",
+                    "talk2",
+                    "switch2",
+                    "gain2",
+                    "lose2"
+                ]
+            },
+            "Transmitter": {
+                "id": "30b9c450be38e7977f67d0193bdd4d94722173149e4e593e74a92c0642b1a07b",
+                "rawId": "?zu6bi9Q?sKLfg_Gynxf",
+                "params": [
+                    "talk",
+                    "switch",
+                    "gain",
+                    "lose"
+                ]
+            }
+        },
+        "scopeStack": [
+            "global"
+        ],
+        "lastScope": null,
+        "canGenerate": false,
+        "declaredMain": true
+    }
+}

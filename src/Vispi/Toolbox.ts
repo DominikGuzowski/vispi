@@ -1,3 +1,4 @@
+import { VISPI_INVALID_NAME } from "./ScopeManager";
 export const VispiToolbox = {
     kind: "categoryToolbox",
     contents: [
@@ -15,17 +16,55 @@ export const VispiToolbox = {
                 },
                 {
                     kind: "block",
+                    type: "MultiRestrictScopeBlock",
+                    inputs: {
+                        NAMES: {
+                            block: {
+                                type: "RestrictNameBlock",
+                            },
+                        },
+                    },
+                },
+                {
+                    kind: "block",
+                    type: "RestrictNameBlock",
+                },
+                {
+                    kind: "block",
                     type: "ReceiveScopeBlock",
                     inputs: {
                         ON: {
                             block: {
                                 type: "NameAccessBlock",
                                 fields: {
-                                    NAME: "?",
+                                    NAME: VISPI_INVALID_NAME,
                                 },
                             },
                         },
                     },
+                },
+                {
+                    kind: "block",
+                    type: "MultiReceiveScopeBlock",
+                    inputs: {
+                        NAMES: {
+                            block: {
+                                type: "ReceiveNameBlock",
+                            },
+                        },
+                        ON: {
+                            block: {
+                                type: "NameAccessBlock",
+                                fields: {
+                                    NAME: VISPI_INVALID_NAME,
+                                },
+                            },
+                        },
+                    },
+                },
+                {
+                    kind: "block",
+                    type: "ReceiveNameBlock",
                 },
                 {
                     kind: "block",
@@ -35,7 +74,7 @@ export const VispiToolbox = {
                             block: {
                                 type: "NameAccessBlock",
                                 fields: {
-                                    NAME: "?",
+                                    NAME: VISPI_INVALID_NAME,
                                 },
                             },
                         },
@@ -43,7 +82,7 @@ export const VispiToolbox = {
                             block: {
                                 type: "NameAccessBlock",
                                 fields: {
-                                    NAME: "?",
+                                    NAME: VISPI_INVALID_NAME,
                                 },
                             },
                         },
@@ -105,7 +144,7 @@ export const VispiToolbox = {
                             block: {
                                 type: "NameAccessBlock",
                                 fields: {
-                                    NAME: "?",
+                                    NAME: VISPI_INVALID_NAME,
                                 },
                             },
                         },
@@ -125,7 +164,7 @@ export const VispiToolbox = {
                             block: {
                                 type: "NameAccessBlock",
                                 fields: {
-                                    NAME: "?",
+                                    NAME: VISPI_INVALID_NAME,
                                 },
                             },
                         },
@@ -133,7 +172,64 @@ export const VispiToolbox = {
                             block: {
                                 type: "NameAccessBlock",
                                 fields: {
-                                    NAME: "?",
+                                    NAME: VISPI_INVALID_NAME,
+                                },
+                            },
+                        },
+                    },
+                },
+                {
+                    kind: "block",
+                    type: "MultiSendBlock",
+                    inputs: {
+                        ON: {
+                            block: {
+                                type: "NameAccessBlock",
+                                fields: {
+                                    NAME: VISPI_INVALID_NAME,
+                                },
+                            },
+                        },
+                        MESSAGES: {
+                            block: {
+                                type: "SendNameBlock",
+                                inputs: {
+                                    MESSAGE: {
+                                        block: {
+                                            type: "NameAccessBlock",
+                                            fields: {
+                                                NAME: VISPI_INVALID_NAME,
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                },
+                {
+                    kind: "block",
+                    type: "SendNameBlock",
+                    inputs: {
+                        MESSAGE: {
+                            block: {
+                                type: "NameAccessBlock",
+                                fields: {
+                                    NAME: VISPI_INVALID_NAME,
+                                },
+                            },
+                        },
+                    },
+                },
+                {
+                    kind: "block",
+                    type: "SyncBlock",
+                    inputs: {
+                        ON: {
+                            block: {
+                                type: "NameAccessBlock",
+                                fields: {
+                                    NAME: VISPI_INVALID_NAME,
                                 },
                             },
                         },
@@ -151,7 +247,25 @@ export const VispiToolbox = {
                     kind: "block",
                     type: "TerminationBlock",
                 },
+                // {
+                //     kind: "block",
+                //     type: "ProcessInstanceBlock",
+                // },
             ],
         },
+        // {
+        //     kind: "category",
+        //     name: "DEV",
+        //     contents: [
+        //         {
+        //             kind: "block",
+        //             type: "TestBlock",
+        //         },
+        //         {
+        //             kind: "block",
+        //             type: "TestBlock2",
+        //         },
+        //     ],
+        // },
     ],
 };

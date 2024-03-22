@@ -201,8 +201,6 @@ export class VispiScopeManager {
     MatchesExistingProcessId(name: string, id: string, requireHash: boolean = true) {
         if (requireHash) id = HashId(id);
         const process = this.processes[name]?.id;
-        console.error(name, id);
-        console.warn(process, id);
         return process === id;
     }
 
@@ -226,6 +224,14 @@ export class VispiScopeManager {
     HasAlreadyDeclaredMain() {
         return this.declaredMain;
     }
+
+    GetCurrentScopeType() {
+        let tree = this.scopeTree;
+        for (const scope of this.scopeStack) {
+            tree = tree[scope];
+        }
+        return tree.type;
+    }
 }
 
-export const VispiScope = new VispiScopeManager();
+export const ScopeManager = new VispiScopeManager();

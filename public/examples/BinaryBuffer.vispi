@@ -1,0 +1,671 @@
+{
+    "workspace": {
+        "blocks": {
+            "languageVersion": 0,
+            "blocks": [
+                {
+                    "type": "ProcessBlock",
+                    "id": "62j.DK#S/,EI]h$8r@?l",
+                    "x": 170,
+                    "y": 131,
+                    "fields": {
+                        "PROCESS": "Buffer"
+                    },
+                    "inputs": {
+                        "BODY": {
+                            "block": {
+                                "type": "ChoiceParentBlock",
+                                "id": "KSEN[|(d%1ZisJl{4mSi",
+                                "inputs": {
+                                    "CHOICE": {
+                                        "block": {
+                                            "type": "ChoiceScopeBlock",
+                                            "id": "}KxJ#28CJ3B$}%DOY|33",
+                                            "inputs": {
+                                                "SCOPE": {
+                                                    "block": {
+                                                        "type": "SyncBlock",
+                                                        "id": "k!C!R;-6$yv/UO(Y?o3P",
+                                                        "inputs": {
+                                                            "ON": {
+                                                                "block": {
+                                                                    "type": "NameAccessBlock",
+                                                                    "id": "O}%eGzvNc=1uNjNk0]+/",
+                                                                    "fields": {
+                                                                        "NAME": "in0"
+                                                                    }
+                                                                }
+                                                            }
+                                                        },
+                                                        "next": {
+                                                            "block": {
+                                                                "type": "ProcessCallBlock",
+                                                                "id": "zM,Wo^NuRZ.Tj*,nW%NG",
+                                                                "fields": {
+                                                                    "PROCESS_NAME": "Buffer0"
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "next": {
+                                                "block": {
+                                                    "type": "ChoiceScopeBlock",
+                                                    "id": "S!{t`@QxFkFSZZMAXrN:",
+                                                    "inputs": {
+                                                        "SCOPE": {
+                                                            "block": {
+                                                                "type": "SyncBlock",
+                                                                "id": "Bs4]4(#PLFk5}s!r)cS%",
+                                                                "inputs": {
+                                                                    "ON": {
+                                                                        "block": {
+                                                                            "type": "NameAccessBlock",
+                                                                            "id": "_O3(3f=(JeBpcPH%C+5`",
+                                                                            "fields": {
+                                                                                "NAME": "in1"
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                },
+                                                                "next": {
+                                                                    "block": {
+                                                                        "type": "ProcessCallBlock",
+                                                                        "id": "0d5:S3i,t`F3B%lW-D`4",
+                                                                        "fields": {
+                                                                            "PROCESS_NAME": "Buffer1"
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "type": "GlobalNameBlock",
+                    "id": "awN}HI$B1pXf^[o$R=!]",
+                    "x": 610,
+                    "y": 630,
+                    "fields": {
+                        "NEW": "in0"
+                    },
+                    "next": {
+                        "block": {
+                            "type": "GlobalNameBlock",
+                            "id": "Z81VW5cz.pJi;Bfc7Gg[",
+                            "fields": {
+                                "NEW": "in1"
+                            },
+                            "next": {
+                                "block": {
+                                    "type": "GlobalNameBlock",
+                                    "id": "+z58oyg1x2D0C]o}vS^W",
+                                    "fields": {
+                                        "NEW": "out0"
+                                    },
+                                    "next": {
+                                        "block": {
+                                            "type": "GlobalNameBlock",
+                                            "id": "-5%qPiKs_sB||]l_uvj)",
+                                            "fields": {
+                                                "NEW": "out1"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "type": "ProcessBlock",
+                    "id": "jNi7cmtETNtIF|2b7.Z5",
+                    "x": 170,
+                    "y": 610,
+                    "fields": {
+                        "PROCESS": "Buffer0"
+                    },
+                    "inputs": {
+                        "BODY": {
+                            "block": {
+                                "type": "ChoiceParentBlock",
+                                "id": "gF+$Z`SBnJ@-C6^,lcP$",
+                                "inputs": {
+                                    "CHOICE": {
+                                        "block": {
+                                            "type": "ChoiceScopeBlock",
+                                            "id": "Il44Wx8mzMn9F(,6zZ(X",
+                                            "inputs": {
+                                                "SCOPE": {
+                                                    "block": {
+                                                        "type": "SyncBlock",
+                                                        "id": "vF@I0rPrBP4,Q#Rz|L+6",
+                                                        "inputs": {
+                                                            "ON": {
+                                                                "block": {
+                                                                    "type": "NameAccessBlock",
+                                                                    "id": "Qi/c;6/0X79TN:)pF9S]",
+                                                                    "fields": {
+                                                                        "NAME": "out0"
+                                                                    }
+                                                                }
+                                                            }
+                                                        },
+                                                        "next": {
+                                                            "block": {
+                                                                "type": "ProcessCallBlock",
+                                                                "id": "F6/{R3bNCl{x]N17CthB",
+                                                                "fields": {
+                                                                    "PROCESS_NAME": "Buffer"
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "next": {
+                                                "block": {
+                                                    "type": "ChoiceScopeBlock",
+                                                    "id": "Z_u#I~!%$Dr/^afdzUI#",
+                                                    "inputs": {
+                                                        "SCOPE": {
+                                                            "block": {
+                                                                "type": "SyncBlock",
+                                                                "id": "}LkwMi[f+vYUo}N`GeG@",
+                                                                "inputs": {
+                                                                    "ON": {
+                                                                        "block": {
+                                                                            "type": "NameAccessBlock",
+                                                                            "id": "D,jyPufdy*02=11l$|]T",
+                                                                            "fields": {
+                                                                                "NAME": "in0"
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                },
+                                                                "next": {
+                                                                    "block": {
+                                                                        "type": "ProcessCallBlock",
+                                                                        "id": "h-?JC47c@e-fTC)H7M:W",
+                                                                        "fields": {
+                                                                            "PROCESS_NAME": "Buffer00"
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    },
+                                                    "next": {
+                                                        "block": {
+                                                            "type": "ChoiceScopeBlock",
+                                                            "id": "Mk%i^]}gxKC^1T.(|:C2",
+                                                            "inputs": {
+                                                                "SCOPE": {
+                                                                    "block": {
+                                                                        "type": "SyncBlock",
+                                                                        "id": "Ys_{3f5,y8jtxe!?2yNW",
+                                                                        "inputs": {
+                                                                            "ON": {
+                                                                                "block": {
+                                                                                    "type": "NameAccessBlock",
+                                                                                    "id": "F`j[%ESjlch:^IFvl)NA",
+                                                                                    "fields": {
+                                                                                        "NAME": "in1"
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        },
+                                                                        "next": {
+                                                                            "block": {
+                                                                                "type": "ProcessCallBlock",
+                                                                                "id": "x:bGCU|%OXpPs@tr;xea",
+                                                                                "fields": {
+                                                                                    "PROCESS_NAME": "Buffer01"
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "type": "ProcessBlock",
+                    "id": "FM~2chynC^D(St48#l*M",
+                    "x": 410,
+                    "y": 611,
+                    "fields": {
+                        "PROCESS": "Buffer1"
+                    },
+                    "inputs": {
+                        "BODY": {
+                            "block": {
+                                "type": "ChoiceParentBlock",
+                                "id": "$)SLDZ$|$~q%JB-_shH.",
+                                "inputs": {
+                                    "CHOICE": {
+                                        "block": {
+                                            "type": "ChoiceScopeBlock",
+                                            "id": "MSbjCfM[7X#F_`#ih_yn",
+                                            "inputs": {
+                                                "SCOPE": {
+                                                    "block": {
+                                                        "type": "SyncBlock",
+                                                        "id": "7KDMoV$*0gYM}lw3c8ew",
+                                                        "inputs": {
+                                                            "ON": {
+                                                                "block": {
+                                                                    "type": "NameAccessBlock",
+                                                                    "id": "U:tanfWEmb9]1jlq/UkK",
+                                                                    "fields": {
+                                                                        "NAME": "out1"
+                                                                    }
+                                                                }
+                                                            }
+                                                        },
+                                                        "next": {
+                                                            "block": {
+                                                                "type": "ProcessCallBlock",
+                                                                "id": "@Qm:Vc`3k_A6{L5X3Dp4",
+                                                                "fields": {
+                                                                    "PROCESS_NAME": "Buffer"
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "next": {
+                                                "block": {
+                                                    "type": "ChoiceScopeBlock",
+                                                    "id": "G9BBl7[bD3i,,c,FLLM/",
+                                                    "inputs": {
+                                                        "SCOPE": {
+                                                            "block": {
+                                                                "type": "SyncBlock",
+                                                                "id": "k!G=fnN?jH;R4Gq!%^*:",
+                                                                "inputs": {
+                                                                    "ON": {
+                                                                        "block": {
+                                                                            "type": "NameAccessBlock",
+                                                                            "id": "CyEaNVUIyQ:G]W^R6GL8",
+                                                                            "fields": {
+                                                                                "NAME": "in0"
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                },
+                                                                "next": {
+                                                                    "block": {
+                                                                        "type": "ProcessCallBlock",
+                                                                        "id": "O9^8H]^3?2KnzR}@#oK^",
+                                                                        "fields": {
+                                                                            "PROCESS_NAME": "Buffer10"
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    },
+                                                    "next": {
+                                                        "block": {
+                                                            "type": "ChoiceScopeBlock",
+                                                            "id": "1ocqy8Hh,xe/iFu{=pv0",
+                                                            "inputs": {
+                                                                "SCOPE": {
+                                                                    "block": {
+                                                                        "type": "SyncBlock",
+                                                                        "id": "gu}`UW.gdK)15:I[dLHO",
+                                                                        "inputs": {
+                                                                            "ON": {
+                                                                                "block": {
+                                                                                    "type": "NameAccessBlock",
+                                                                                    "id": "4FiPKIlj@HY+JMoUHz%m",
+                                                                                    "fields": {
+                                                                                        "NAME": "in1"
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        },
+                                                                        "next": {
+                                                                            "block": {
+                                                                                "type": "ProcessCallBlock",
+                                                                                "id": "Jc8b/X-Y:uy.#Dy%_$W[",
+                                                                                "fields": {
+                                                                                    "PROCESS_NAME": "Buffer11"
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "type": "ProcessBlock",
+                    "id": "nJOa6p6vgT$hav,U14|)",
+                    "x": 610,
+                    "y": 130,
+                    "fields": {
+                        "PROCESS": "Buffer10"
+                    },
+                    "inputs": {
+                        "BODY": {
+                            "block": {
+                                "type": "SyncBlock",
+                                "id": "rI?z}0~4m(;n-Si|ivXz",
+                                "inputs": {
+                                    "ON": {
+                                        "block": {
+                                            "type": "NameAccessBlock",
+                                            "id": "mh#0A0I*:SwA]50FnzMY",
+                                            "fields": {
+                                                "NAME": "out0"
+                                            }
+                                        }
+                                    }
+                                },
+                                "next": {
+                                    "block": {
+                                        "type": "ProcessCallBlock",
+                                        "id": "aq1O[Pk*2NEhj{I3WQ#8",
+                                        "fields": {
+                                            "PROCESS_NAME": "Buffer1"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "type": "ProcessBlock",
+                    "id": "|`ZDk]oopY!W0_P^/[C4",
+                    "x": 410,
+                    "y": 370,
+                    "fields": {
+                        "PROCESS": "Buffer01"
+                    },
+                    "inputs": {
+                        "BODY": {
+                            "block": {
+                                "type": "SyncBlock",
+                                "id": "|]+T7FFHrGvh/B9{88Pt",
+                                "inputs": {
+                                    "ON": {
+                                        "block": {
+                                            "type": "NameAccessBlock",
+                                            "id": ";YK+B3evE1Ct_k7%y_mB",
+                                            "fields": {
+                                                "NAME": "out1"
+                                            }
+                                        }
+                                    }
+                                },
+                                "next": {
+                                    "block": {
+                                        "type": "ProcessCallBlock",
+                                        "id": "T2AD#LysAJQZmWO-y?4Q",
+                                        "fields": {
+                                            "PROCESS_NAME": "Buffer0"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "type": "ProcessBlock",
+                    "id": "(8^4n8d!~/$u;-h:YcWx",
+                    "x": 410,
+                    "y": 130,
+                    "fields": {
+                        "PROCESS": "Buffer00"
+                    },
+                    "inputs": {
+                        "BODY": {
+                            "block": {
+                                "type": "SyncBlock",
+                                "id": "QC;5(@?gR-!Ot1F=;F~t",
+                                "inputs": {
+                                    "ON": {
+                                        "block": {
+                                            "type": "NameAccessBlock",
+                                            "id": "ks2wXmy:R2m`@ww;U0#,",
+                                            "fields": {
+                                                "NAME": "out0"
+                                            }
+                                        }
+                                    }
+                                },
+                                "next": {
+                                    "block": {
+                                        "type": "ProcessCallBlock",
+                                        "id": "RreIxdi.SOSo{{p!}TR@",
+                                        "fields": {
+                                            "PROCESS_NAME": "Buffer0"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "type": "ProcessBlock",
+                    "id": "z?}mQHlwgFmfXNhG,uz/",
+                    "x": 610,
+                    "y": 370,
+                    "fields": {
+                        "PROCESS": "Buffer11"
+                    },
+                    "inputs": {
+                        "BODY": {
+                            "block": {
+                                "type": "SyncBlock",
+                                "id": "b9JCcWUii3/?Y[u8ndJ^",
+                                "inputs": {
+                                    "ON": {
+                                        "block": {
+                                            "type": "NameAccessBlock",
+                                            "id": "k6Z+{+h}ge)kdowWGRA6",
+                                            "fields": {
+                                                "NAME": "out1"
+                                            }
+                                        }
+                                    }
+                                },
+                                "next": {
+                                    "block": {
+                                        "type": "ProcessCallBlock",
+                                        "id": "#(2A59HxrzeRvi02b^Q7",
+                                        "fields": {
+                                            "PROCESS_NAME": "Buffer1"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "type": "MainBlock",
+                    "id": "b)$v@}2prRFQ}-e_Gu7*",
+                    "x": 650,
+                    "y": 770,
+                    "inputs": {
+                        "MAIN": {
+                            "block": {
+                                "type": "ProcessCallBlock",
+                                "id": "=gQZ/+:Wx)Zw?gGKem4`",
+                                "fields": {
+                                    "PROCESS_NAME": "Buffer"
+                                }
+                            }
+                        }
+                    }
+                }
+            ]
+        }
+    },
+    "state": {
+        "scopeTree": {
+            "global": {
+                "names": [
+                    "in0",
+                    "in1",
+                    "out0",
+                    "out1"
+                ],
+                "type": "global",
+                "9877a40bf80233143b54e8d6b32035714e59f61ca07b2db3c99ebd989e6f78d8": {
+                    "names": [],
+                    "type": "ProcessBlock",
+                    "16125da2ff2dfd5d2c7709f8ff75c5a57da08792616f8c6f0d5664d9e4a90563": {
+                        "names": [],
+                        "type": "ChoiceParentBlock",
+                        "2c31c8f236424fee2dcac24d1b9875c30d462ab4ca3943cedc11ad2641203e21": {
+                            "names": [],
+                            "type": "ChoiceScopeBlock"
+                        },
+                        "32a301a0976db2015098948e69a53ffe4f141d0eea90358880057ec6d1f59995": {
+                            "names": [],
+                            "type": "ChoiceScopeBlock"
+                        }
+                    }
+                },
+                "babe5944bbbb2df76bbcec9a029d0c87ab66d98fe37db3597b459c6028e3af5d": {
+                    "names": [],
+                    "type": "ProcessBlock"
+                },
+                "7d0c4a713506fd80dafc409149eebecde0f6a960c56b66d76a6a71aacaaadf2f": {
+                    "names": [],
+                    "type": "ProcessBlock"
+                },
+                "2274574199c7a0f05a424baf7196e9401cdae4ea4d44818e89bf66d38c06be8d": {
+                    "names": [],
+                    "type": "ProcessBlock"
+                },
+                "3c8fd2b931de7ae66ede0fd13da9b34a29e6863374bf320601f62db1e4eb2c60": {
+                    "names": [],
+                    "type": "ProcessBlock"
+                },
+                "101ee1f580cb87df8b6ff7ce49179029b1e554715e9b62ced4f2a3fda2e54fb2": {
+                    "names": [],
+                    "type": "ProcessBlock",
+                    "100116924e918cd5d17afcb722ce7ba9bda5ac0991b19e369e9408c2889cab47": {
+                        "names": [],
+                        "type": "ChoiceParentBlock",
+                        "f9942a122a0c84c1b20f583e6225df7dcabab549e27d91b3c43a1c70a813bae0": {
+                            "names": [],
+                            "type": "ChoiceScopeBlock"
+                        },
+                        "7560fce207344159ea31a86845cc1f5b58e0eed2cedb73e711b676db39deb07e": {
+                            "names": [],
+                            "type": "ChoiceScopeBlock"
+                        },
+                        "df2e20ba538aab55385f7c998b7319725269bd278935e37bee58989d76b6a613": {
+                            "names": [],
+                            "type": "ChoiceScopeBlock"
+                        }
+                    }
+                },
+                "6f0272df66d2a07ca65452f16cac771e15907075bd6ed5e4a7f553973a512186": {
+                    "names": [],
+                    "type": "ProcessBlock",
+                    "a868cc1452a36e6ccad8788099e36832b9a0f9abc456abc55b412762f7707612": {
+                        "names": [],
+                        "type": "ChoiceParentBlock",
+                        "cbdcc0fbf888f053e177a3b6016e1ec6242dd707dbbac3e58d8f795fa65d13e2": {
+                            "names": [],
+                            "type": "ChoiceScopeBlock"
+                        },
+                        "c2ef542a0eced9035612af5887ca5bb7601072e55f9c0ab4b3f022b9079cccfc": {
+                            "names": [],
+                            "type": "ChoiceScopeBlock"
+                        },
+                        "f582dd366159c315df8846d1482205060b57fd7fbf56bd28ba28fd9fd9ed965a": {
+                            "names": [],
+                            "type": "ChoiceScopeBlock"
+                        }
+                    }
+                },
+                "e896a05a4a496414d00795d48304520402cc6aeebaf4561f9b823e1466f8b7f7": {
+                    "names": [],
+                    "type": "MainBlock"
+                }
+            }
+        },
+        "processes": {
+            "Buffer": {
+                "id": "9877a40bf80233143b54e8d6b32035714e59f61ca07b2db3c99ebd989e6f78d8",
+                "rawId": "62j.DK#S/,EI]h$8r@?l",
+                "params": []
+            },
+            "Buffer00": {
+                "id": "babe5944bbbb2df76bbcec9a029d0c87ab66d98fe37db3597b459c6028e3af5d",
+                "rawId": "(8^4n8d!~/$u;-h:YcWx",
+                "params": []
+            },
+            "Buffer10": {
+                "id": "7d0c4a713506fd80dafc409149eebecde0f6a960c56b66d76a6a71aacaaadf2f",
+                "rawId": "nJOa6p6vgT$hav,U14|)",
+                "params": []
+            },
+            "Buffer01": {
+                "id": "2274574199c7a0f05a424baf7196e9401cdae4ea4d44818e89bf66d38c06be8d",
+                "rawId": "|`ZDk]oopY!W0_P^/[C4",
+                "params": []
+            },
+            "Buffer11": {
+                "id": "3c8fd2b931de7ae66ede0fd13da9b34a29e6863374bf320601f62db1e4eb2c60",
+                "rawId": "z?}mQHlwgFmfXNhG,uz/",
+                "params": []
+            },
+            "Buffer0": {
+                "id": "101ee1f580cb87df8b6ff7ce49179029b1e554715e9b62ced4f2a3fda2e54fb2",
+                "rawId": "jNi7cmtETNtIF|2b7.Z5",
+                "params": []
+            },
+            "Buffer1": {
+                "id": "6f0272df66d2a07ca65452f16cac771e15907075bd6ed5e4a7f553973a512186",
+                "rawId": "FM~2chynC^D(St48#l*M",
+                "params": []
+            }
+        },
+        "scopeStack": [
+            "global"
+        ],
+        "lastScope": null,
+        "canGenerate": false,
+        "declaredMain": true
+    }
+}

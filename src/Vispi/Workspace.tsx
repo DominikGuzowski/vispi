@@ -1,7 +1,7 @@
 import { useBlocklyWorkspace } from "react-blockly";
 import * as Blockly from "blockly/core";
 import { Load, Save, Serialize } from "./Serialization";
-import { VispiScope, VispiScopeManager } from "./ScopeManager";
+import { ScopeManager, VispiScopeManager } from "./ScopeManager";
 import { VispiToolbox } from "./Toolbox";
 import { useEffect, useRef } from "react";
 import { VispiGenerator } from "./Generator";
@@ -24,9 +24,8 @@ interface VispiWorkspaceProps {
 
 const ReorganiseCode = (code: string) => {
     const all = code.split("\n").filter((line) => line.length > 0);
-    const processes = all.filter((line) => line.includes(" ="));
+    const processes = all.filter((line) => line.includes(" =")).flatMap((line) => [line, ""]);
     const main = all.filter((line) => !line.includes(" ="));
-    if (processes.length > 0) main.unshift("");
     return [...processes, ...main].join("\n");
 };
 
@@ -58,8 +57,9 @@ export const VispiWorkspace = ({ storageKey, onChange, scopeRef, workspaceRef, o
         ref,
         toolboxConfiguration: VispiToolbox,
         workspaceConfiguration,
-        initialJson: Load(storageKey, VispiScope),
+        initialJson: Load(storageKey, ScopeManager),
         onWorkspaceChange: (workspace) => {
+            console.log("CHANGING");
             clearTimeout(timeoutRef.current);
             clearTimeout(saveTimeout.current);
 
@@ -67,31 +67,32 @@ export const VispiWorkspace = ({ storageKey, onChange, scopeRef, workspaceRef, o
                 timeoutRef.current = setTimeout(() => {
                     const state: VispiState = {
                         code: ReorganiseCode(VispiGenerator.workspaceToCode(workspace)),
-                        scope: { ...VispiScope } as VispiScopeManager,
+                        scope: { ...ScopeManager } as VispiScopeManager,
                         workspace,
                     };
                     onChange(state);
-                    VispiScope.Clear();
+                    ScopeManager.Clear();
                 }, 250);
             }
 
             saveTimeout.current = setTimeout(() => {
-                Save(workspace, storageKey, VispiScope);
+                console.log("SAVED");
+                Save(workspace, storageKey, ScopeManager);
             }, 500);
         },
     });
 
     useEffect(() => {
         if (scopeRef) {
-            scopeRef.current = VispiScope;
+            scopeRef.current = ScopeManager;
         }
         if (workspaceRef && workspace) {
             workspaceRef.current = workspace;
         }
         if (onSerialize && workspace) {
-            onSerialize.current = () => Serialize(workspace, VispiScope);
+            onSerialize.current = () => Serialize(workspace, ScopeManager);
         }
-    }, [scopeRef, workspaceRef, workspace, VispiScope]);
+    }, [scopeRef, workspaceRef, workspace, ScopeManager]);
 
     return <div className='editor-blocks' ref={ref} />;
 };

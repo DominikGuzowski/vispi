@@ -1,0 +1,864 @@
+{
+    "workspace": {
+        "blocks": {
+            "languageVersion": 0,
+            "blocks": [
+                {
+                    "type": "ProcessBlock",
+                    "id": "+D#yB`QZe^29q!n`)MBJ",
+                    "x": 910,
+                    "y": 250,
+                    "fields": {
+                        "PROCESS": "Consume"
+                    },
+                    "inputs": {
+                        "BODY": {
+                            "block": {
+                                "type": "ReceiveScopeBlock",
+                                "id": "K[L-4HgG;,gz;ajQ!#p/",
+                                "fields": {
+                                    "NEW": "status"
+                                },
+                                "inputs": {
+                                    "ON": {
+                                        "block": {
+                                            "type": "NameAccessBlock",
+                                            "id": ".W`W3O7(14#qPXfxV^zl",
+                                            "fields": {
+                                                "NAME": "notif"
+                                            }
+                                        }
+                                    },
+                                    "SCOPE": {
+                                        "block": {
+                                            "type": "ChoiceParentBlock",
+                                            "id": "NRvYmVN]trl:WsY@{x8G",
+                                            "inputs": {
+                                                "CHOICE": {
+                                                    "block": {
+                                                        "type": "ChoiceScopeBlock",
+                                                        "id": "a*$y*ST8VCe{OD;Zx#%T",
+                                                        "inputs": {
+                                                            "SCOPE": {
+                                                                "block": {
+                                                                    "type": "GuardScopeBlock",
+                                                                    "id": "(#y=/zu0_m2qpVoVgqS]",
+                                                                    "fields": {
+                                                                        "OPERATION": "="
+                                                                    },
+                                                                    "inputs": {
+                                                                        "FIRST": {
+                                                                            "block": {
+                                                                                "type": "NameAccessBlock",
+                                                                                "id": "7+YvF}NH[s=F5fNB8F(d",
+                                                                                "fields": {
+                                                                                    "NAME": "status"
+                                                                                }
+                                                                            }
+                                                                        },
+                                                                        "SECOND": {
+                                                                            "block": {
+                                                                                "type": "NameAccessBlock",
+                                                                                "id": "w$d^cN$DR,Blv9}|GgA[",
+                                                                                "fields": {
+                                                                                    "NAME": "success"
+                                                                                }
+                                                                            }
+                                                                        },
+                                                                        "SCOPE": {
+                                                                            "block": {
+                                                                                "type": "ParallelParentBlock",
+                                                                                "id": "[nbiu=-2V{q*G;2+FPLX",
+                                                                                "inputs": {
+                                                                                    "PARALLEL": {
+                                                                                        "block": {
+                                                                                            "type": "ParallelScopeBlock",
+                                                                                            "id": "FIN_a%F!M[R{.y!C.9.2",
+                                                                                            "inputs": {
+                                                                                                "SCOPE": {
+                                                                                                    "block": {
+                                                                                                        "type": "SendBlock",
+                                                                                                        "id": "E!m7,]SQv%?Arn`L;|Cd",
+                                                                                                        "inputs": {
+                                                                                                            "MESSAGE": {
+                                                                                                                "block": {
+                                                                                                                    "type": "NameAccessBlock",
+                                                                                                                    "id": "S0-#N?%(l98aP5W5)cqt",
+                                                                                                                    "fields": {
+                                                                                                                        "NAME": "success"
+                                                                                                                    }
+                                                                                                                }
+                                                                                                            },
+                                                                                                            "ON": {
+                                                                                                                "block": {
+                                                                                                                    "type": "NameAccessBlock",
+                                                                                                                    "id": "@L9%kZ%an7lnu3:rSHl3",
+                                                                                                                    "fields": {
+                                                                                                                        "NAME": "shutdown"
+                                                                                                                    }
+                                                                                                                }
+                                                                                                            }
+                                                                                                        },
+                                                                                                        "next": {
+                                                                                                            "block": {
+                                                                                                                "type": "TerminationBlock",
+                                                                                                                "id": "9Ox_YkF:qKGBH(yF7C#-"
+                                                                                                            }
+                                                                                                        }
+                                                                                                    }
+                                                                                                }
+                                                                                            },
+                                                                                            "next": {
+                                                                                                "block": {
+                                                                                                    "type": "ParallelScopeBlock",
+                                                                                                    "id": "WX#0en*Ut!F`=J]0S6UJ",
+                                                                                                    "inputs": {
+                                                                                                        "SCOPE": {
+                                                                                                            "block": {
+                                                                                                                "type": "ProcessCallBlock",
+                                                                                                                "id": "/pY9*#.H$2atZIC!*//h",
+                                                                                                                "fields": {
+                                                                                                                    "PROCESS_NAME": "Consume"
+                                                                                                                }
+                                                                                                            }
+                                                                                                        }
+                                                                                                    }
+                                                                                                }
+                                                                                            }
+                                                                                        }
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        },
+                                                        "next": {
+                                                            "block": {
+                                                                "type": "ChoiceScopeBlock",
+                                                                "id": "2Af`:Podq@-^(vvQ}6`W",
+                                                                "inputs": {
+                                                                    "SCOPE": {
+                                                                        "block": {
+                                                                            "type": "GuardScopeBlock",
+                                                                            "id": "LEyC4-~i::CWjFBm0_eB",
+                                                                            "fields": {
+                                                                                "OPERATION": "="
+                                                                            },
+                                                                            "inputs": {
+                                                                                "FIRST": {
+                                                                                    "block": {
+                                                                                        "type": "NameAccessBlock",
+                                                                                        "id": "?Q!ldQ=}3|!i8Gm^0$`V",
+                                                                                        "fields": {
+                                                                                            "NAME": "status"
+                                                                                        }
+                                                                                    }
+                                                                                },
+                                                                                "SECOND": {
+                                                                                    "block": {
+                                                                                        "type": "NameAccessBlock",
+                                                                                        "id": "_2;~@9mjQrpRZQJTT=H/",
+                                                                                        "fields": {
+                                                                                            "NAME": "failure"
+                                                                                        }
+                                                                                    }
+                                                                                },
+                                                                                "SCOPE": {
+                                                                                    "block": {
+                                                                                        "type": "ProcessCallBlock",
+                                                                                        "id": "%I%2l+vnH!~tPwa(,8gZ",
+                                                                                        "fields": {
+                                                                                            "PROCESS_NAME": "AnnounceSystemShutdown"
+                                                                                        }
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "type": "ProcessBlock",
+                    "id": "@}4m%ZvllSMsWWLx88_4",
+                    "x": 90,
+                    "y": 190,
+                    "fields": {
+                        "PROCESS": "Pinger"
+                    },
+                    "inputs": {
+                        "BODY": {
+                            "block": {
+                                "type": "ChoiceParentBlock",
+                                "id": "$Xy:aTBSUe1(dL~2gjv]",
+                                "inputs": {
+                                    "CHOICE": {
+                                        "block": {
+                                            "type": "ChoiceScopeBlock",
+                                            "id": "}5|@?-da8i=*@YY_XXQo",
+                                            "inputs": {
+                                                "SCOPE": {
+                                                    "block": {
+                                                        "type": "ReceiveScopeBlock",
+                                                        "id": "?s{.Ocrq)(`Q%8Lam}x{",
+                                                        "fields": {
+                                                            "NEW": "status"
+                                                        },
+                                                        "inputs": {
+                                                            "ON": {
+                                                                "block": {
+                                                                    "type": "NameAccessBlock",
+                                                                    "id": "E_vaoRep^Fk4PmnC}-E.",
+                                                                    "fields": {
+                                                                        "NAME": "shutdown"
+                                                                    }
+                                                                }
+                                                            },
+                                                            "SCOPE": {
+                                                                "block": {
+                                                                    "type": "ChoiceParentBlock",
+                                                                    "id": "$Mry8s#E`ay@N(WmBy^s",
+                                                                    "inputs": {
+                                                                        "CHOICE": {
+                                                                            "block": {
+                                                                                "type": "ChoiceScopeBlock",
+                                                                                "id": "yNHOW/cGt-_8ZpG(@?k^",
+                                                                                "inputs": {
+                                                                                    "SCOPE": {
+                                                                                        "block": {
+                                                                                            "type": "GuardScopeBlock",
+                                                                                            "id": "]#hvIFMwSP*=7bd+t?]r",
+                                                                                            "fields": {
+                                                                                                "OPERATION": "!="
+                                                                                            },
+                                                                                            "inputs": {
+                                                                                                "FIRST": {
+                                                                                                    "block": {
+                                                                                                        "type": "NameAccessBlock",
+                                                                                                        "id": "4%@pd^d~pkOz;Iv)pqKR",
+                                                                                                        "fields": {
+                                                                                                            "NAME": "status"
+                                                                                                        }
+                                                                                                    }
+                                                                                                },
+                                                                                                "SECOND": {
+                                                                                                    "block": {
+                                                                                                        "type": "NameAccessBlock",
+                                                                                                        "id": "Dh5gp$]C$sZ|]Ra85nW@",
+                                                                                                        "fields": {
+                                                                                                            "NAME": "failure"
+                                                                                                        }
+                                                                                                    }
+                                                                                                },
+                                                                                                "SCOPE": {
+                                                                                                    "block": {
+                                                                                                        "type": "SendBlock",
+                                                                                                        "id": ":Nzvvs#S:*vvok-A#K#c",
+                                                                                                        "inputs": {
+                                                                                                            "MESSAGE": {
+                                                                                                                "block": {
+                                                                                                                    "type": "NameAccessBlock",
+                                                                                                                    "id": "ziJ@Z,1%j(D=!YT?}v/l",
+                                                                                                                    "fields": {
+                                                                                                                        "NAME": "success"
+                                                                                                                    }
+                                                                                                                }
+                                                                                                            },
+                                                                                                            "ON": {
+                                                                                                                "block": {
+                                                                                                                    "type": "NameAccessBlock",
+                                                                                                                    "id": "6:Q$e[sS@e}aEm+!w@{D",
+                                                                                                                    "fields": {
+                                                                                                                        "NAME": "notif"
+                                                                                                                    }
+                                                                                                                }
+                                                                                                            }
+                                                                                                        },
+                                                                                                        "next": {
+                                                                                                            "block": {
+                                                                                                                "type": "ProcessCallBlock",
+                                                                                                                "id": "k19rIP?Yf%y=wkVF;Jpy",
+                                                                                                                "fields": {
+                                                                                                                    "PROCESS_NAME": "Pinger"
+                                                                                                                }
+                                                                                                            }
+                                                                                                        }
+                                                                                                    }
+                                                                                                }
+                                                                                            }
+                                                                                        }
+                                                                                    }
+                                                                                },
+                                                                                "next": {
+                                                                                    "block": {
+                                                                                        "type": "ChoiceScopeBlock",
+                                                                                        "id": ".~;$LI#cfnm1C36-qgoD",
+                                                                                        "inputs": {
+                                                                                            "SCOPE": {
+                                                                                                "block": {
+                                                                                                    "type": "SendBlock",
+                                                                                                    "id": "j.SIUwtx#W~W4)$]%-fV",
+                                                                                                    "inputs": {
+                                                                                                        "MESSAGE": {
+                                                                                                            "block": {
+                                                                                                                "type": "NameAccessBlock",
+                                                                                                                "id": "0+D`(GOq3vvc!OgF`#~-",
+                                                                                                                "fields": {
+                                                                                                                    "NAME": "failure"
+                                                                                                                }
+                                                                                                            }
+                                                                                                        },
+                                                                                                        "ON": {
+                                                                                                            "block": {
+                                                                                                                "type": "NameAccessBlock",
+                                                                                                                "id": "aH#`%.Lj[q(h[$xy;F`2",
+                                                                                                                "fields": {
+                                                                                                                    "NAME": "notif"
+                                                                                                                }
+                                                                                                            }
+                                                                                                        }
+                                                                                                    },
+                                                                                                    "next": {
+                                                                                                        "block": {
+                                                                                                            "type": "TerminationBlock",
+                                                                                                            "id": "-^v;)Rl)%hzqE?*{HDAk"
+                                                                                                        }
+                                                                                                    }
+                                                                                                }
+                                                                                            }
+                                                                                        }
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "next": {
+                                                "block": {
+                                                    "type": "ChoiceScopeBlock",
+                                                    "id": "mH,A^M_-n$[jIU4lP95Z",
+                                                    "inputs": {
+                                                        "SCOPE": {
+                                                            "block": {
+                                                                "type": "SendBlock",
+                                                                "id": "+zi}r_.}XygVA,92DJVZ",
+                                                                "inputs": {
+                                                                    "MESSAGE": {
+                                                                        "block": {
+                                                                            "type": "NameAccessBlock",
+                                                                            "id": "R7)D{?[,FZ|B(4qIp.Z?",
+                                                                            "fields": {
+                                                                                "NAME": "failure"
+                                                                            }
+                                                                        }
+                                                                    },
+                                                                    "ON": {
+                                                                        "block": {
+                                                                            "type": "NameAccessBlock",
+                                                                            "id": "_Z}A^XvrPKb$:.gU%u^q",
+                                                                            "fields": {
+                                                                                "NAME": "notif"
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                },
+                                                                "next": {
+                                                                    "block": {
+                                                                        "type": "TerminationBlock",
+                                                                        "id": "p_Vm0)nZhhm7iOn!3*+W"
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "type": "ProcessBlock",
+                    "id": "%vZChGzI?v.I=?N,P-BE",
+                    "x": 90,
+                    "y": -110,
+                    "fields": {
+                        "PROCESS": "AnnounceSystemShutdown"
+                    },
+                    "inputs": {
+                        "BODY": {
+                            "block": {
+                                "type": "SendBlock",
+                                "id": "$|H.Yr?P[CDEr%D(DnZa",
+                                "inputs": {
+                                    "MESSAGE": {
+                                        "block": {
+                                            "type": "NameAccessBlock",
+                                            "id": "p_=N$)~#J0VDWv%UK~M%",
+                                            "fields": {
+                                                "NAME": "failure"
+                                            }
+                                        }
+                                    },
+                                    "ON": {
+                                        "block": {
+                                            "type": "NameAccessBlock",
+                                            "id": "/-Fts=eUreVANLTVZD/B",
+                                            "fields": {
+                                                "NAME": "shutdown"
+                                            }
+                                        }
+                                    }
+                                },
+                                "next": {
+                                    "block": {
+                                        "type": "ProcessCallBlock",
+                                        "id": "K]81[1?fks(a3S@[J7-D",
+                                        "fields": {
+                                            "PROCESS_NAME": "AnnounceSystemShutdown"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "type": "GlobalNameBlock",
+                    "id": "(XHpoyEe9ziI6kNZCrOB",
+                    "x": 830,
+                    "y": -90,
+                    "fields": {
+                        "NEW": "success"
+                    },
+                    "next": {
+                        "block": {
+                            "type": "GlobalNameBlock",
+                            "id": "CqIrVQcF_YFyL0qNa6P]",
+                            "fields": {
+                                "NEW": "failure"
+                            },
+                            "next": {
+                                "block": {
+                                    "type": "GlobalNameBlock",
+                                    "id": "AZ_MpKZ$)IN?M{)k~L.[",
+                                    "fields": {
+                                        "NEW": "notif"
+                                    },
+                                    "next": {
+                                        "block": {
+                                            "type": "GlobalNameBlock",
+                                            "id": "l=cAk.pmkXri9s/U(p2H",
+                                            "fields": {
+                                                "NEW": "shutdown"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "type": "MainBlock",
+                    "id": "r7aS*UEiJk=]PLP0fR{R",
+                    "x": 510,
+                    "y": 690,
+                    "inputs": {
+                        "MAIN": {
+                            "block": {
+                                "type": "ParallelParentBlock",
+                                "id": ":%R=Jq#I4rh3[f|j~Xy`",
+                                "inputs": {
+                                    "PARALLEL": {
+                                        "block": {
+                                            "type": "ParallelScopeBlock",
+                                            "id": "c2a#![@iuAI?MC1xJQA[",
+                                            "inputs": {
+                                                "SCOPE": {
+                                                    "block": {
+                                                        "type": "ProcessCallBlock",
+                                                        "id": "%50(!b_.R(-s#!Bll2-Y",
+                                                        "fields": {
+                                                            "PROCESS_NAME": "Consume"
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "next": {
+                                                "block": {
+                                                    "type": "ParallelScopeBlock",
+                                                    "id": "tx;kE1Zgdshg(wN0GNAw",
+                                                    "inputs": {
+                                                        "SCOPE": {
+                                                            "block": {
+                                                                "type": "ProcessCallBlock",
+                                                                "id": "rDd/eDM)wd7jK=.~:Z@g",
+                                                                "fields": {
+                                                                    "PROCESS_NAME": "SpinupNewPingers"
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "type": "ProcessBlock",
+                    "id": "Q[}[hVGB3B1WR+m{z4{M",
+                    "x": 450,
+                    "y": -110,
+                    "fields": {
+                        "PROCESS": "SpinupNewPingers"
+                    },
+                    "inputs": {
+                        "BODY": {
+                            "block": {
+                                "type": "ParallelParentBlock",
+                                "id": "2#_RvEBpYG=YJw8~`h%j",
+                                "inputs": {
+                                    "PARALLEL": {
+                                        "block": {
+                                            "type": "ParallelScopeBlock",
+                                            "id": "H;$0`tPJJJv_Bc0b~^sg",
+                                            "inputs": {
+                                                "SCOPE": {
+                                                    "block": {
+                                                        "type": "ReceiveScopeBlock",
+                                                        "id": "^O-OL{QfCv~83dyANyc%",
+                                                        "fields": {
+                                                            "NEW": "status"
+                                                        },
+                                                        "inputs": {
+                                                            "ON": {
+                                                                "block": {
+                                                                    "type": "NameAccessBlock",
+                                                                    "id": "wY,_exp^0GtPAL,C9hmB",
+                                                                    "fields": {
+                                                                        "NAME": "shutdown"
+                                                                    }
+                                                                }
+                                                            },
+                                                            "SCOPE": {
+                                                                "block": {
+                                                                    "type": "GuardScopeBlock",
+                                                                    "id": "PiM@ir[pjC+WV1kvQW-c",
+                                                                    "fields": {
+                                                                        "OPERATION": "!="
+                                                                    },
+                                                                    "inputs": {
+                                                                        "FIRST": {
+                                                                            "block": {
+                                                                                "type": "NameAccessBlock",
+                                                                                "id": "i!nD;m(i.YmPeg3|xJ?6",
+                                                                                "fields": {
+                                                                                    "NAME": "status"
+                                                                                }
+                                                                            }
+                                                                        },
+                                                                        "SECOND": {
+                                                                            "block": {
+                                                                                "type": "NameAccessBlock",
+                                                                                "id": "eLeV^*n^iiDJHXi:|-3=",
+                                                                                "fields": {
+                                                                                    "NAME": "failure"
+                                                                                }
+                                                                            }
+                                                                        },
+                                                                        "SCOPE": {
+                                                                            "block": {
+                                                                                "type": "ProcessCallBlock",
+                                                                                "id": "10=7~$|UlRX]pgz{[)FQ",
+                                                                                "fields": {
+                                                                                    "PROCESS_NAME": "SpinupNewPingers"
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "next": {
+                                                "block": {
+                                                    "type": "ParallelScopeBlock",
+                                                    "id": "U16:k/ao,~U:a$KC_n!k",
+                                                    "inputs": {
+                                                        "SCOPE": {
+                                                            "block": {
+                                                                "type": "ProcessCallBlock",
+                                                                "id": "L*mOlms.]3?H]_(5@hPt",
+                                                                "fields": {
+                                                                    "PROCESS_NAME": "Pinger"
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            ]
+        }
+    },
+    "state": {
+        "scopeTree": {
+            "global": {
+                "names": [
+                    "success",
+                    "failure",
+                    "notif",
+                    "shutdown"
+                ],
+                "type": "global",
+                "d644d9218c79abc53c32ca8a214876bff84d2aa1f3e3609b5ca2c0b2ead81a07": {
+                    "names": [],
+                    "type": "ProcessBlock"
+                },
+                "bbd813509a0e07f889ca6cc9013bbfe456a74601152c40b6808bbf04c5a32500": {
+                    "names": [],
+                    "type": "ProcessBlock",
+                    "ecb18ac86dba23c9fc07e9b5472f701205d406e9bc9eb14db0d439a045558d62": {
+                        "names": [
+                            "status"
+                        ],
+                        "type": "ReceiveScopeBlock",
+                        "788771bc3fdf1afb31ed5ca40266e23ed46852f1560c62054a8bd524c7d8c085": {
+                            "names": [],
+                            "type": "GuardScopeBlock"
+                        }
+                    },
+                    "f8b9d49e1fbb3a3abb23ef9a1ae43911b2a633ce645b6b2470e156fcc824619f": {
+                        "names": [],
+                        "type": "ParallelParentBlock",
+                        "0eeea9b135c65d5767ba3c9672fc3b3bdd1470f4c07d104473801f1119bd3626": {
+                            "names": [],
+                            "type": "ParallelScopeBlock",
+                            "ecb18ac86dba23c9fc07e9b5472f701205d406e9bc9eb14db0d439a045558d62": {
+                                "names": [
+                                    "status"
+                                ],
+                                "type": "ReceiveScopeBlock",
+                                "788771bc3fdf1afb31ed5ca40266e23ed46852f1560c62054a8bd524c7d8c085": {
+                                    "names": [],
+                                    "type": "GuardScopeBlock"
+                                }
+                            }
+                        },
+                        "6b46850e598620557c6383d4573fa17a2ba85c7bacda0259ac0f99815e36741e": {
+                            "names": [],
+                            "type": "ParallelScopeBlock"
+                        }
+                    }
+                },
+                "4aecaa5d3f49e64e5556194aa4cba2ed405857c3c25240746a6009e0beee68b5": {
+                    "names": [],
+                    "type": "ProcessBlock",
+                    "e6cd507c540a3c900620dfc51c75257416c8db934dbbe1fb34d36a14e8ce8d2d": {
+                        "names": [
+                            "status"
+                        ],
+                        "type": "ReceiveScopeBlock",
+                        "755c9b8340a05e5c0b1bc573df9ff0566fd92266cf452dc8e79eb0baf6f09010": {
+                            "names": [],
+                            "type": "GuardScopeBlock"
+                        },
+                        "8379b6f003a90860f6ed54c63be3e411331384b0ff1fa416c0570114975417cf": {
+                            "names": [],
+                            "type": "ChoiceParentBlock",
+                            "b803c5e1767c4bd493c605c97196f41267c50c846a91ae7311b55f1120a43820": {
+                                "names": [],
+                                "type": "ChoiceScopeBlock",
+                                "755c9b8340a05e5c0b1bc573df9ff0566fd92266cf452dc8e79eb0baf6f09010": {
+                                    "names": [],
+                                    "type": "GuardScopeBlock"
+                                }
+                            },
+                            "af9cbcab2a515ddc20fe65cf3bb4d1a662fe6a326e1300e8ff0e239fb314f408": {
+                                "names": [],
+                                "type": "ChoiceScopeBlock"
+                            }
+                        }
+                    },
+                    "cfe337b95eab66c2e031f4fdd164fb417899db0a39042288cee8a97918fbe409": {
+                        "names": [],
+                        "type": "ChoiceParentBlock",
+                        "faa60c4fefe9f0ab541675097ead7811bc2e1cb5519375d68f7f7f0398b7fa1f": {
+                            "names": [],
+                            "type": "ChoiceScopeBlock",
+                            "e6cd507c540a3c900620dfc51c75257416c8db934dbbe1fb34d36a14e8ce8d2d": {
+                                "names": [
+                                    "status"
+                                ],
+                                "type": "ReceiveScopeBlock",
+                                "755c9b8340a05e5c0b1bc573df9ff0566fd92266cf452dc8e79eb0baf6f09010": {
+                                    "names": [],
+                                    "type": "GuardScopeBlock"
+                                },
+                                "8379b6f003a90860f6ed54c63be3e411331384b0ff1fa416c0570114975417cf": {
+                                    "names": [],
+                                    "type": "ChoiceParentBlock",
+                                    "b803c5e1767c4bd493c605c97196f41267c50c846a91ae7311b55f1120a43820": {
+                                        "names": [],
+                                        "type": "ChoiceScopeBlock",
+                                        "755c9b8340a05e5c0b1bc573df9ff0566fd92266cf452dc8e79eb0baf6f09010": {
+                                            "names": [],
+                                            "type": "GuardScopeBlock"
+                                        }
+                                    },
+                                    "af9cbcab2a515ddc20fe65cf3bb4d1a662fe6a326e1300e8ff0e239fb314f408": {
+                                        "names": [],
+                                        "type": "ChoiceScopeBlock"
+                                    }
+                                }
+                            }
+                        },
+                        "5461a0c70f1877d668c4c908898baf0649c619fa29e1d89f649674005ce2b724": {
+                            "names": [],
+                            "type": "ChoiceScopeBlock"
+                        }
+                    }
+                },
+                "c12d2a20ae6ccf083b70169d6e0c9727a14c6f52fb183ce55bab61c2ab593e19": {
+                    "names": [],
+                    "type": "ProcessBlock",
+                    "a21244555ed40e3ffeabe46c446a4698853e9e5a36fd1175829bc3c677baf0a2": {
+                        "names": [
+                            "status"
+                        ],
+                        "type": "ReceiveScopeBlock",
+                        "b096b87b66046e6dc1eda8f6ec1a7fcec6ea773dd6b82ecd9a70eacdfc227934": {
+                            "names": [],
+                            "type": "GuardScopeBlock",
+                            "81d7f3dfd421269ae31f4303311488b98a31aeb9b82d42cf31f2133d7379d220": {
+                                "names": [],
+                                "type": "ParallelParentBlock",
+                                "9fe302829eff0c9e081b890ceddf8967f8c0b028a70ff97bd0cbeb984c570912": {
+                                    "names": [],
+                                    "type": "ParallelScopeBlock"
+                                },
+                                "ec85c9d5525ac8d47a3ae7d0840cf5a436d6a369e7cd2c91160e85905826f9d9": {
+                                    "names": [],
+                                    "type": "ParallelScopeBlock"
+                                }
+                            }
+                        },
+                        "fee3d0aa6090248dc61e622e4656cee20de8ad645a9398730d468869d4a3943a": {
+                            "names": [],
+                            "type": "GuardScopeBlock"
+                        },
+                        "ff6eb71d06449e27963e50e2b2b85e066ec3b8dcc9d6f50dca5db156926dd4b9": {
+                            "names": [],
+                            "type": "ChoiceParentBlock",
+                            "f7c5e8a3896b179426fdfa492e139752e764039d301d4ae4572f43915baac627": {
+                                "names": [],
+                                "type": "ChoiceScopeBlock",
+                                "b096b87b66046e6dc1eda8f6ec1a7fcec6ea773dd6b82ecd9a70eacdfc227934": {
+                                    "names": [],
+                                    "type": "GuardScopeBlock",
+                                    "81d7f3dfd421269ae31f4303311488b98a31aeb9b82d42cf31f2133d7379d220": {
+                                        "names": [],
+                                        "type": "ParallelParentBlock",
+                                        "9fe302829eff0c9e081b890ceddf8967f8c0b028a70ff97bd0cbeb984c570912": {
+                                            "names": [],
+                                            "type": "ParallelScopeBlock"
+                                        },
+                                        "ec85c9d5525ac8d47a3ae7d0840cf5a436d6a369e7cd2c91160e85905826f9d9": {
+                                            "names": [],
+                                            "type": "ParallelScopeBlock"
+                                        }
+                                    }
+                                }
+                            },
+                            "f70f81167029ca8ddfbb0cc7747e7d9291f3b1d3256d756b4898c6fe2bce49d8": {
+                                "names": [],
+                                "type": "ChoiceScopeBlock",
+                                "fee3d0aa6090248dc61e622e4656cee20de8ad645a9398730d468869d4a3943a": {
+                                    "names": [],
+                                    "type": "GuardScopeBlock"
+                                }
+                            }
+                        }
+                    }
+                },
+                "04c1852c41c99d8f07c869c9b38e06956afe547aa1224c37e9ceee068091cc94": {
+                    "names": [],
+                    "type": "MainBlock",
+                    "5e328a2ab1edc36bacd5780b7b1c4053eadb153d26257a5f242760ee472d57b8": {
+                        "names": [],
+                        "type": "ParallelParentBlock",
+                        "a4b3a5b3e212dc79d11211c339601de919cf379d238e1b68d162342de51b8aea": {
+                            "names": [],
+                            "type": "ParallelScopeBlock"
+                        },
+                        "eb7b3c551caefde018faf017949da2a4dac5034b63dd503b1a643223c8d6174f": {
+                            "names": [],
+                            "type": "ParallelScopeBlock"
+                        }
+                    }
+                }
+            }
+        },
+        "processes": {
+            "AnnounceSystemShutdown": {
+                "id": "d644d9218c79abc53c32ca8a214876bff84d2aa1f3e3609b5ca2c0b2ead81a07",
+                "rawId": "%vZChGzI?v.I=?N,P-BE",
+                "params": []
+            },
+            "SpinupNewPingers": {
+                "id": "bbd813509a0e07f889ca6cc9013bbfe456a74601152c40b6808bbf04c5a32500",
+                "rawId": "Q[}[hVGB3B1WR+m{z4{M",
+                "params": []
+            },
+            "Pinger": {
+                "id": "4aecaa5d3f49e64e5556194aa4cba2ed405857c3c25240746a6009e0beee68b5",
+                "rawId": "@}4m%ZvllSMsWWLx88_4",
+                "params": []
+            },
+            "Consume": {
+                "id": "c12d2a20ae6ccf083b70169d6e0c9727a14c6f52fb183ce55bab61c2ab593e19",
+                "rawId": "+D#yB`QZe^29q!n`)MBJ",
+                "params": []
+            }
+        },
+        "scopeStack": [
+            "global"
+        ],
+        "lastScope": null,
+        "canGenerate": false,
+        "declaredMain": true
+    }
+}

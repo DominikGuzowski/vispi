@@ -27,8 +27,8 @@ const ExtractData = (jsonStr: string) => {
 
 export const Save = (workspace: Blockly.WorkspaceSvg, key: string, scope?: VispiScopeManager) => {
     if (scope) localStorage.setItem(key + ":scope", JSON.stringify(scope?.GetLastScope()));
-    const json = Blockly.serialization.workspaces.save(workspace);
-    localStorage.setItem(key, JSON.stringify(json));
+    const json = JSON.stringify(Blockly.serialization.workspaces.save(workspace) || {});
+    if (json !== "{}") localStorage.setItem(key, json);
 };
 
 export const Load = (key: string, scope?: VispiScopeManager): object => {
@@ -52,7 +52,7 @@ export const SerializeFromCache = () => {
         state,
     };
 
-    return JSON.stringify(serializationJSON, null, 4);
+    return JSON.stringify(serializationJSON);
 };
 
 export const Serialize = (workspace: Blockly.WorkspaceSvg, scope: VispiScopeManager) => {
@@ -62,7 +62,7 @@ export const Serialize = (workspace: Blockly.WorkspaceSvg, scope: VispiScopeMana
         state: scope.GetLastScope(),
     };
 
-    return JSON.stringify(serializationJSON, null, 4);
+    return JSON.stringify(serializationJSON);
 };
 
 export const Deserialize = (json: string) => {

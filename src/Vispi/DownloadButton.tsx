@@ -1,8 +1,8 @@
-export const Download = (content: string, filename?: string) => {
+export const Download = (content: string, filename: string = "program", extension: string = "txt") => {
     const element = document.createElement("a");
     const file = new Blob([content], { type: "text/plain" });
     element.href = URL.createObjectURL(file);
-    element.download = `${filename || "program"}.vispi`;
+    element.download = `${filename}.${extension}`;
     document.body.appendChild(element);
     element.click();
 };

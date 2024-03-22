@@ -30,7 +30,15 @@ export const FileInput: React.FC<FileInputProps> = ({ onLoad, onSelect }) => {
     };
 
     return (
-        <label htmlFor='vispi_file_loader' className='vispi-nav__item'>
+        <label
+            htmlFor='vispi_file_loader'
+            className='vispi-nav__item'
+            tabIndex={0}
+            onKeyDown={(e) => {
+                if (e.key === "Enter") {
+                    (document.getElementById("vispi_file_loader") as HTMLInputElement).click();
+                }
+            }}>
             Open File
             <input
                 id='vispi_file_loader'
