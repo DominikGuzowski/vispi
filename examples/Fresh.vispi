@@ -1,0 +1,212 @@
+{
+    "workspace": {
+        "blocks": {
+            "languageVersion": 0,
+            "blocks": [
+                {
+                    "type": "MainBlock",
+                    "id": "dJRYhVB^)Scjl~3|L7xo",
+                    "x": 410,
+                    "y": 190,
+                    "inputs": {
+                        "MAIN": {
+                            "block": {
+                                "type": "ParallelParentBlock",
+                                "id": "NzTs_B|fYZYr|pWvoGuy",
+                                "inputs": {
+                                    "PARALLEL": {
+                                        "block": {
+                                            "type": "ParallelScopeBlock",
+                                            "id": "utd2a!RF9c_pzx[6yhf-",
+                                            "inputs": {
+                                                "SCOPE": {
+                                                    "block": {
+                                                        "type": "RestrictScopeBlock",
+                                                        "id": "=9R3hO^=Wa4r#{~2p~n#",
+                                                        "fields": {
+                                                            "NEW": "x"
+                                                        },
+                                                        "inputs": {
+                                                            "SCOPE": {
+                                                                "block": {
+                                                                    "type": "SendBlock",
+                                                                    "id": "SA{4$g/*7FyWxlAcVKi/",
+                                                                    "inputs": {
+                                                                        "MESSAGE": {
+                                                                            "block": {
+                                                                                "type": "NameAccessBlock",
+                                                                                "id": "RqcaH%w@o[{-v%uc_ky)",
+                                                                                "fields": {
+                                                                                    "NAME": "x"
+                                                                                }
+                                                                            }
+                                                                        },
+                                                                        "ON": {
+                                                                            "block": {
+                                                                                "type": "NameAccessBlock",
+                                                                                "id": "6F}2dHMOXAI.pDU;oZ$Z",
+                                                                                "fields": {
+                                                                                    "NAME": "a"
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    },
+                                                                    "next": {
+                                                                        "block": {
+                                                                            "type": "SendBlock",
+                                                                            "id": ")qFl.=U-2_57,daXLWVd",
+                                                                            "inputs": {
+                                                                                "MESSAGE": {
+                                                                                    "block": {
+                                                                                        "type": "NameAccessBlock",
+                                                                                        "id": ".UvU@t|=)p}xpyH*Gd[0",
+                                                                                        "fields": {
+                                                                                            "NAME": "x"
+                                                                                        }
+                                                                                    }
+                                                                                },
+                                                                                "ON": {
+                                                                                    "block": {
+                                                                                        "type": "NameAccessBlock",
+                                                                                        "id": "vd30o/!%hpp;ySfkO24Y",
+                                                                                        "fields": {
+                                                                                            "NAME": "b"
+                                                                                        }
+                                                                                    }
+                                                                                }
+                                                                            },
+                                                                            "next": {
+                                                                                "block": {
+                                                                                    "type": "TerminationBlock",
+                                                                                    "id": "7,4@EyYz/$ZG!:!hvlc2"
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "next": {
+                                                "block": {
+                                                    "type": "ParallelScopeBlock",
+                                                    "id": "rR#f_jdjpaY/c6{}6_=E",
+                                                    "inputs": {
+                                                        "SCOPE": {
+                                                            "block": {
+                                                                "type": "ReceiveScopeBlock",
+                                                                "id": "G_=xqnh~.8jfznnJJh[#",
+                                                                "fields": {
+                                                                    "NEW": "y"
+                                                                },
+                                                                "inputs": {
+                                                                    "ON": {
+                                                                        "block": {
+                                                                            "type": "NameAccessBlock",
+                                                                            "id": "9EURu@*5PrYtHJW,$#7X",
+                                                                            "fields": {
+                                                                                "NAME": "b"
+                                                                            }
+                                                                        }
+                                                                    },
+                                                                    "SCOPE": {
+                                                                        "block": {
+                                                                            "type": "TerminationBlock",
+                                                                            "id": "sQ8Cc#Ycd5`:WI+ef=0."
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "type": "GlobalNameBlock",
+                    "id": "S0eFB?svM~;C*nnvU9Tq",
+                    "x": 630,
+                    "y": 210,
+                    "fields": {
+                        "NEW": "a"
+                    },
+                    "next": {
+                        "block": {
+                            "type": "GlobalNameBlock",
+                            "id": "yF{$6P?E?|s`2ys`hY:Y",
+                            "fields": {
+                                "NEW": "b"
+                            }
+                        }
+                    }
+                }
+            ]
+        }
+    },
+    "state": {
+        "scopeTree": {
+            "global": {
+                "names": [
+                    "a",
+                    "b"
+                ],
+                "type": "global",
+                "455b3a21ecbe12b4eb85f8b6b20f7bdb7c5a20bcd1ca0edfffb89160c3a81b97": {
+                    "names": [],
+                    "type": "MainBlock",
+                    "7d4d3bb7cfab344b86b5c20caf2f6a37c14f5e380075f8ed8edaffb69b148df6": {
+                        "names": [
+                            "x"
+                        ],
+                        "type": "RestrictScopeBlock"
+                    },
+                    "c2bc099c11c554716e8bcfaca071a971c5ab8760089276935e733970ee209f76": {
+                        "names": [
+                            "y"
+                        ],
+                        "type": "ReceiveScopeBlock"
+                    },
+                    "1520f8afc4479d70db8e43b93d80083a15310bbc4e25c328efd2eeee660ba0ee": {
+                        "names": [],
+                        "type": "ParallelParentBlock",
+                        "11894231d854364caf87dbf9c5aae5650c36f76a23420d48e3aa461200fd1e73": {
+                            "names": [],
+                            "type": "ParallelScopeBlock",
+                            "7d4d3bb7cfab344b86b5c20caf2f6a37c14f5e380075f8ed8edaffb69b148df6": {
+                                "names": [
+                                    "x"
+                                ],
+                                "type": "RestrictScopeBlock"
+                            }
+                        },
+                        "1df8d037996f46b84b3239b6a02b044306d04e3da526fd17faa1fd2a0600c1e1": {
+                            "names": [],
+                            "type": "ParallelScopeBlock",
+                            "c2bc099c11c554716e8bcfaca071a971c5ab8760089276935e733970ee209f76": {
+                                "names": [
+                                    "y"
+                                ],
+                                "type": "ReceiveScopeBlock"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "processes": {},
+        "scopeStack": [
+            "global"
+        ],
+        "lastScope": null,
+        "canGenerate": false,
+        "declaredMain": true
+    }
+}
