@@ -102,7 +102,7 @@ export const Splitter: React.FC<ISplitterProps> = ({
         setLastPosition(vertical ? e.clientY : e.clientX);
     };
 
-    const handleMouseUp = (e: React.MouseEvent) => {
+    const handleMouseUp = () => {
         setIsDragging(false);
         onResize?.();
     };

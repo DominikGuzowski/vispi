@@ -1,7 +1,6 @@
 import VispiLogo from "../assets/VispiLogo.svg";
 import VispiIcon from "../assets/VispiIcon.svg";
 import { FaCaretDown } from "react-icons/fa";
-import { RiSplitCellsHorizontal, RiSplitCellsVertical } from "react-icons/ri";
 import { Download } from "./DownloadButton";
 import { Deserialize, Purge, SerializeFromCache } from "./Serialization";
 import { FileInput } from "./LoadFile";
@@ -241,7 +240,7 @@ export const VispiNav = ({
                 <Tooltip position='bottom' content={useVertical ? "Horizontal" : "Vertical"}>
                     <button
                         className='vispi-nav__item'
-                        onClick={(e) => {
+                        onClick={() => {
                             localStorage.setItem("vispi:orientation", useVertical ? "horizontal" : "vertical");
                             onOrientationChange?.(useVertical ? "horizontal" : "vertical");
                             BlurActive();

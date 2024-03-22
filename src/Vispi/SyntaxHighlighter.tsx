@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { BsConeStriped } from "react-icons/bs";
+
 const assignColor = (type: string) => {
     switch (type) {
         case "Process":
