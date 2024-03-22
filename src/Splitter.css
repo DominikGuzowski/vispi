@@ -1,0 +1,99 @@
+.splitter__container {
+    display: grid;
+    grid-template-columns: 1fr 2px 1fr;
+    grid-template-rows: none;
+    gap: 0.25rem;
+    width: 100%;
+    height: 100%;
+}
+
+.splitter__container--vertical {
+    grid-template-columns: none;
+    grid-template-rows: 1fr 2px 1fr;
+}
+
+.splitter__divider {
+    --divider-size: 4px;
+    --divider-offset: 1.25cqh;
+
+    --divider-width: var(--divider-size);
+    --divider-height: 100cqh;
+    --divider-color: #222;
+    --divider-margin: 2px;
+    position: relative;
+
+    background-color: var(--divider-color);
+    box-shadow: 0.125rem 0.125rem 0.25rem #1116, 0.1rem 0.1rem 0.125rem #1116;
+    cursor: col-resize;
+    height: 98cqh;
+    margin-top: 1cqh;
+    width: 3px;
+    border-radius: 1rem;
+    user-select: none;
+}
+
+.splitter__container--vertical > .splitter__divider {
+    --divider-size: 2px;
+    --divider-width: 97.5cqw;
+    --divider-offset: 1.25cqw;
+    --divider-height: var(--divider-size);
+    height: 3px;
+    margin-top: 0;
+    cursor: row-resize;
+    width: 98cqw;
+    margin-left: 1cqw;
+}
+
+.splitter__divider:not(.splitter__divider--non-draggable)::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0.25rem 0 0.25rem 0.25rem;
+    border-color: transparent transparent transparent var(--divider-color);
+
+    transform: translate(1px, -50%);
+}
+
+.splitter__container--vertical > .splitter__divider:not(.splitter__divider--non-draggable)::before {
+    top: 100%;
+    left: 50%;
+    border-width: 0.25rem 0.25rem 0 0.25rem;
+    border-color: var(--divider-color) transparent transparent transparent;
+    transform: translate(-50%, 1px);
+}
+
+.splitter__divider:not(.splitter__divider--non-draggable)::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 100%;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0.25rem 0.25rem 0.25rem 0;
+    border-color: transparent var(--divider-color) transparent transparent;
+
+    transform: translate(-1px, -50%);
+}
+
+.splitter__container--vertical > .splitter__divider:not(.splitter__divider--non-draggable)::after {
+    top: -130%;
+    left: 50%;
+    border-width: 0 0.25rem 0.25rem 0.25rem;
+    border-color: transparent transparent var(--divider-color) transparent;
+    transform: translate(-50%, -1px);
+}
+
+.splitter__divider.splitter__divider--non-draggable {
+    cursor: default;
+}
+
+.splitter__panel {
+    display: grid;
+    overflow: hidden;
+    padding: 0.25rem;
+}

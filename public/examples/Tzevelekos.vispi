@@ -1,0 +1,274 @@
+{
+    "workspace": {
+        "blocks": {
+            "languageVersion": 0,
+            "blocks": [
+                {
+                    "type": "MainBlock",
+                    "id": "uW5y!@95%/AyzD*zFCj/",
+                    "x": 690,
+                    "y": 350,
+                    "inputs": {
+                        "MAIN": {
+                            "block": {
+                                "type": "RestrictScopeBlock",
+                                "id": "l[~E2x6Ve.,b3J-eJrXg",
+                                "fields": {
+                                    "NEW": "b"
+                                },
+                                "inputs": {
+                                    "SCOPE": {
+                                        "block": {
+                                            "type": "ProcessCallBlock",
+                                            "id": "iA2[%5IoE2e:2lRkZImH",
+                                            "fields": {
+                                                "PROCESS_NAME": "P"
+                                            },
+                                            "inputs": {
+                                                "ARGS": {
+                                                    "block": {
+                                                        "type": "ProcessArgBlock",
+                                                        "id": "H@Xg:Wq,Efdz=BffS]Pg",
+                                                        "inputs": {
+                                                            "ARG": {
+                                                                "block": {
+                                                                    "type": "NameAccessBlock",
+                                                                    "id": ",|E)/Cd~JnRySALd)`8i",
+                                                                    "icons": {
+                                                                        "comment": {
+                                                                            "text": "Using the globally defined 'a'.",
+                                                                            "pinned": false,
+                                                                            "height": 80,
+                                                                            "width": 160
+                                                                        }
+                                                                    },
+                                                                    "fields": {
+                                                                        "NAME": "a"
+                                                                    }
+                                                                }
+                                                            }
+                                                        },
+                                                        "next": {
+                                                            "block": {
+                                                                "type": "ProcessArgBlock",
+                                                                "id": "O2RV)(i,QP#|c92]+?BV",
+                                                                "inputs": {
+                                                                    "ARG": {
+                                                                        "block": {
+                                                                            "type": "NameAccessBlock",
+                                                                            "id": "bhGBmwO^HPCxk{s}R7gM",
+                                                                            "fields": {
+                                                                                "NAME": "b"
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "type": "ProcessBlock",
+                    "id": "XO.6:eO*hS8EwPXve,KA",
+                    "x": 410,
+                    "y": 170,
+                    "fields": {
+                        "PROCESS": "P"
+                    },
+                    "inputs": {
+                        "PARAMS": {
+                            "block": {
+                                "type": "ProcessParamBlock",
+                                "id": "7Z$M[[ZvxTpe_SA(0ZzO",
+                                "icons": {
+                                    "comment": {
+                                        "text": "Defining this parameter 'a' shadows the globally defined free 'a' within the context of this process.",
+                                        "pinned": false,
+                                        "height": 93.75,
+                                        "width": 241.25
+                                    }
+                                },
+                                "fields": {
+                                    "NEW": "a"
+                                },
+                                "next": {
+                                    "block": {
+                                        "type": "ProcessParamBlock",
+                                        "id": "dNbD{^4hr/QqLFtOwlRF",
+                                        "fields": {
+                                            "NEW": "b"
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "BODY": {
+                            "block": {
+                                "type": "SendBlock",
+                                "id": "D+kU|;]cUhhw{Zr{Yv}#",
+                                "inputs": {
+                                    "MESSAGE": {
+                                        "block": {
+                                            "type": "NameAccessBlock",
+                                            "id": "jr4a9j69zO,7@!Prm~.2",
+                                            "fields": {
+                                                "NAME": "b"
+                                            }
+                                        }
+                                    },
+                                    "ON": {
+                                        "block": {
+                                            "type": "NameAccessBlock",
+                                            "id": "92NH*cO~S(0-]g~PeiF+",
+                                            "icons": {
+                                                "comment": {
+                                                    "text": "Using the locally defined parameter 'a'.",
+                                                    "pinned": false,
+                                                    "height": 80,
+                                                    "width": 160
+                                                }
+                                            },
+                                            "fields": {
+                                                "NAME": "a"
+                                            }
+                                        }
+                                    }
+                                },
+                                "next": {
+                                    "block": {
+                                        "type": "RestrictScopeBlock",
+                                        "id": "D?FiQ)d]2b2c_80`3Nwm",
+                                        "fields": {
+                                            "NEW": "c"
+                                        },
+                                        "inputs": {
+                                            "SCOPE": {
+                                                "block": {
+                                                    "type": "ProcessCallBlock",
+                                                    "id": "||mSwm}:Sv`6DB3;Y2*T",
+                                                    "fields": {
+                                                        "PROCESS_NAME": "P"
+                                                    },
+                                                    "inputs": {
+                                                        "ARGS": {
+                                                            "block": {
+                                                                "type": "ProcessArgBlock",
+                                                                "id": "81P{lsE7ZCl9x2G=m1KW",
+                                                                "inputs": {
+                                                                    "ARG": {
+                                                                        "block": {
+                                                                            "type": "NameAccessBlock",
+                                                                            "id": "[I}8:*.c($og)4E`6IZO",
+                                                                            "fields": {
+                                                                                "NAME": "b"
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                },
+                                                                "next": {
+                                                                    "block": {
+                                                                        "type": "ProcessArgBlock",
+                                                                        "id": "VXE5d,!-yWDBPi1psM4k",
+                                                                        "inputs": {
+                                                                            "ARG": {
+                                                                                "block": {
+                                                                                    "type": "NameAccessBlock",
+                                                                                    "id": "+dX`*MrgOjp5uo{:jbOh",
+                                                                                    "fields": {
+                                                                                        "NAME": "c"
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "type": "GlobalNameBlock",
+                    "id": "SIU#UGq/k,+7VpVA48Fz",
+                    "x": 690,
+                    "y": 270,
+                    "icons": {
+                        "comment": {
+                            "text": "This 'a' is global and is different from the one defined in Process 'P'.",
+                            "pinned": false,
+                            "height": 87.5,
+                            "width": 253.75
+                        }
+                    },
+                    "fields": {
+                        "NEW": "a"
+                    }
+                }
+            ]
+        }
+    },
+    "state": {
+        "scopeTree": {
+            "global": {
+                "names": [
+                    "a"
+                ],
+                "type": "global",
+                "9b385f0d65be9be93b5d2495805013540e570130db3be8cda8d808e8ae596253": {
+                    "names": [
+                        "a",
+                        "b"
+                    ],
+                    "type": "ProcessBlock",
+                    "54e23dd6d4cfbb431b82097370d6cc580049bef95ce3e7c81ae16072a7f14d37": {
+                        "names": [
+                            "c"
+                        ],
+                        "type": "RestrictScopeBlock"
+                    }
+                },
+                "3a064f5a61f54f8fc9d71f5295b724d6ea8b3533258a704915f8fa4d5cc152da": {
+                    "names": [],
+                    "type": "MainBlock",
+                    "d91f34194b4db6a373750b0fd17076be020519e6e7c9062b467fc995ba333e01": {
+                        "names": [
+                            "b"
+                        ],
+                        "type": "RestrictScopeBlock"
+                    }
+                }
+            }
+        },
+        "processes": {
+            "P": {
+                "id": "9b385f0d65be9be93b5d2495805013540e570130db3be8cda8d808e8ae596253",
+                "rawId": "XO.6:eO*hS8EwPXve,KA",
+                "params": [
+                    "a",
+                    "b"
+                ]
+            }
+        },
+        "scopeStack": [
+            "global"
+        ],
+        "lastScope": null,
+        "canGenerate": false,
+        "declaredMain": true
+    }
+}
